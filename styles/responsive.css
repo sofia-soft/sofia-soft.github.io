@@ -1,45 +1,276 @@
-@media (min-width: 480px) {
+/* ===============================
+   GLOBAL FIXES
+================================ */
+
+body {
+    overflow-x: hidden;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.hero_desc,
+.about_us_rigth_side,
+.contact_box_info {
+    min-width: 0;
+}
+
+/* ===============================
+   TABLET (≤ 1024px)
+================================ */
+
+@media (max-width: 1024px) {
+
+    section {
+        padding-top: 50px;
+    }
+
+    .nav_list {
+        gap: 14px;
+        font-size: 16px;
+    }
+
+    #hero {
+        min-height: unset;
+        padding-top: 80px;
+    }
+
     .hero_content {
         flex-direction: column;
+        text-align: center;
+        padding: 60px 20px;
+        gap: 40px;
+        height: 70vh;
     }
+
     .hero_desc {
-        width: 85%;
-        gap: 20px;
-        height: unset;
+        width: 100%;
+        height: 0;
         align-items: center;
     }
 
-    .hero_title{
-        text-align: center;
+    .hero_sub_title {
+        max-width: 600px;
     }
 
-    .hero_sub_title {
-        text-align: center;
+    .hero_img {
+        width: 500px;
+        padding-top: 50px;
+    }
+
+    .services_boxes,
+    .how_work_boxes {
+        flex-wrap: wrap;
+        gap: 40px;
+        width: 85%;
+    }
+
+
+    .services_boxes > div,
+    .how_work_boxes > div {
+        max-width: 100%;
         width: 100%;
     }
 
-    .hero_button_more {
+    #about_us {
+        flex-direction: column;
+        gap: 50px;
+        padding: 60px 20px;
+    }
 
+    .about_us_icon {
+        width: 500px;
+    }
+
+    .about_us_rigth_side {
+        width: 100%;
+        text-align: center;
+    }
+
+    .about_us_lists {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .about_us_list > li {
+        max-width: 100%;
+    }
+
+    .contact_boxes {
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .contact_form,
+    .contact_box_info {
+        width: 90%;
+    }
+
+    .contact_box_info {
+        align-items: center;
+    }
+
+    .contact_icon {
+        width: 500px;
+    }
+
+    footer {
+        margin: 14px ;
+        padding: 40px;
+        flex-direction: column;
+        gap: 30px;
+        text-align: center;
     }
 }
 
-@media (min-width: 768px) {
-    .hero_content {
+/* ===============================
+MOBILE (≤ 768px)
+================================ */
+
+@media (max-width: 768px) {
+
+    .header {
         flex-direction: row;
+        height: auto;
+        gap: 20px;
+        padding: 20px;
     }
-}
 
-@media (min-width: 1024px) {
-    /* styles here */
-}
-
-@media (min-width: 1280px) {
-    /* styles here */
-}
-
-
-@media (min-width: 1536px) {
-    .hero_content {
-        flex-direction: row;
+    .nav_list {
+        display: none; /* скрито по подразбиране */
+        flex-direction: column;
+        position: absolute;
+        top: 90px;
+        left: 0;
+        background-color: rgba(255, 255, 255, 0.95);
+        padding: 20px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        width: 100%;
+        gap: 15px;
+        z-index: 999;
     }
+
+    .nav_list.active {
+        display: flex; /* показване при click */
+    }
+
+    .burger {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        cursor: pointer;
+        z-index: 1000; /* да е над менюто */
+    }
+
+    .burger svg {
+        cursor: pointer;
+        transition: transform 0.3s ease;
+    }
+
+    .burger svg rect {
+        transition: all 0.3s ease;
+        rx: 2; /* за заоблени краища */
+    }
+
+    /* При отворено меню */
+    .burger.active svg rect:nth-child(1) {
+        transform: rotate(45deg) translate(15px, 15px);
+    }
+
+    .burger.active svg rect:nth-child(2) {
+        opacity: 0;
+    }
+
+    .burger.active svg rect:nth-child(3) {
+        transform: rotate(-45deg) translate(15px, -15px);
+    }
+
+    .nav_list.active {
+        display: flex;
+    }
+
+    .hero_title {
+        font-size: 2.2rem;
+    }
+
+    .service_title,
+    .how_work_title,
+    .about_us_title,
+    .contact_title {
+        font-size: 2.2rem;
+    }
+
+    .hero_img {
+        width: 100%;
+        max-width: 350px;
+    }
+
+    .services_boxes > div,
+    .how_work_boxes > div {
+        max-width: 100%;
+        height: auto;
+    }
+
+
+    .about_us_lists {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .about_us_list:first-child {
+        padding-right: 0;
+    }
+
+    .about_us_icon,
+    .contact_icon {
+        width: 100%;
+        max-width: 350px;
+        padding: 30px;
+    }
+
+    .contact_form {
+        height: auto;
+        padding: 40px 20px;
+    }
+
+    .form {
+        font-size: 32px;
+    }
+
+    footer > .logo {
+        width: 180px;
+    }
+
+}
+
+/* ===============================
+   SMALL MOBILE (≤ 480px)
+================================ */
+
+@media (max-width: 480px) {
+
+    .hero_title {
+        font-size: 1.8rem;
+    }
+
+    .hero_sub_title {
+        font-size: 1rem;
+    }
+
+    .nav_list > li {
+        font-size: 16px;
+    }
+
+    .scroll_up {
+        width: 40px;
+        height: 40px;
+    }
+
+    .up {
+        width: 30px;
+    }
+
+
 }

@@ -1,28 +1,54 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="bg">
 <head>
+
     <meta charset="UTF-8">
-    <title>София Софт</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>София Софт – Иновативни уеб решения за вашия бизнес</title>
+    <meta name="description"
+          content="София Софт предлага професионални уеб решения, custom приложения и UI/UX дизайн за растеж на вашия бизнес.">
+    <meta name="keywords"
+          content="София Софт, уеб разработка, уеб приложения, custom софтуер, UI/UX дизайн, дигитални решения, софтуерна компания, бизнес решения">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.sofia-soft.com/">
+
+    <link rel="shortcut icon" href="images/favicon.svg" type="image/svg+xml">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon.svg">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/favicon.svg">
+    <meta name="theme-color" content="#132133">
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="София Софт – Иновативни уеб решения за вашия бизнес">
+    <meta property="og:description"
+          content="София Софт предлага професионални уеб решения, custom приложения и UI/UX дизайн за растеж на вашия бизнес.">
+    <meta property="og:site_name" content="София Софт">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="София Софт – Иновативни уеб решения за вашия бизнес">
+    <meta name="twitter:description"
+          content="София Софт предлага професионални уеб решения, custom приложения и UI/UX дизайн за растеж на вашия бизнес.">
+    <meta name="twitter:site" content="@SofiaSoft">
+    <meta name="twitter:creator" content="@SofiaSoft">
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles/reset.css">
     <link rel="stylesheet" href="styles/styles.css">
-    <!--    <link rel="stylesheet" href="styles/responsive.css">-->
-    <link rel="shortcut icon" href="images/favicon.svg" type="image/x-icon">
+    <link rel="stylesheet" href="styles/responsive.css">
+
 </head>
 <body>
 <span class="scroll_up"><img
         src="images/up.svg"
-        srcset="images/up.svg 400w, images/up.svg 800w, images/up.svg 1200w"
-        sizes="(max-width: 600px) 400px, (max-width: 1200px) 800px, 1200px"
         alt="up"
-        loading="lazy"
+        fetchpriority="high"
         class="up"></span>
 <header class="header">
     <img
             src="images/logo.svg"
-            srcset="images/logo.svg 400w, images/logo.svg 800w, images/logo.svg 1200w"
-            sizes="(max-width: 600px) 400px, (max-width: 1200px) 800px, 1200px"
             alt="logo"
-            loading="lazy"
+            fetchpriority="high"
             class="logo">
 
     <nav>
@@ -43,100 +69,112 @@
                 Контакти
             </li>
         </ul>
+        <div class="burger" aria-label="Отваряне на навигационно меню" role="button">
+            <svg class="burger-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="44" height="44">
+                <path d="M3 6h18M3 12h18M3 18h18" stroke="#132133" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+            <svg class="close-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="44" height="44">
+                <path d="M6 6l12 12M6 18L18 6" stroke="#132133" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+        </div>
     </nav>
 </header>
 <main>
-    <section id="hero">
+    <section id="hero" itemscope itemtype="https://schema.org/WebPageElement">
         <img
                 src="images/hero.svg"
-                srcset="images/hero.svg 400w, images/hero.svg 800w, images/hero.svg 1200w"
-                sizes="(max-width: 600px) 400px, (max-width: 1200px) 800px, 1200px"
-                alt="hero"
-                loading="lazy"
+                alt="Иновативни уеб решения от София Софт"
+                fetchpriority="high"
                 class="hero">
 
         <div class="hero_content">
-            <div class="hero_desc">
+            <div class="hero_desc" itemprop="text">
                 <span class="hero_budget">Професионални уеб решения</span>
-                <h1 class="hero_title">Изграждаме <span class="hero_title_second">иновативни</span> уеб решения за вашия
+                <h1 class="hero_title" itemprop="headline">Изграждаме <span class="hero_title_second">иновативни</span>
+                    уеб решения за вашия
                     бизнес</h1>
-                <p class="hero_sub_title">София Софт е водеща софтуерна компания, специализирана в разработка на уеб
-                    приложения, custom решения и дигитални продукти, които трансформират бизнеса.</p>
-                <button class="hero_button_more">Научете повече</button>
+                <p class="hero_sub_title" itemprop="description">София Софт е водеща софтуерна компания, специализирана
+                    в разработка на уеб
+                    приложения.</p>
+                <button class="hero_button_more" type="button">Научете повече</button>
             </div>
 
             <img
                     src="images/hero_img.svg"
-                    srcset="images/hero_img.svg 400w, images/hero_img.svg 800w, images/hero_img.svg 1200w"
-                    sizes="(max-width: 600px) 400px, (max-width: 1200px) 800px, 1200px"
-                    alt="hero_img"
-                    loading="lazy"
+                    alt="Примери за уеб проекти на София Софт"
+                    fetchpriority="high"
                     class="hero_img">
         </div>
 
     </section>
-    <section id="services">
+    <section id="services" itemscope itemtype="https://schema.org/Service">
         <span class="service_budget">
             Нашите Услуги
         </span>
         <div class="service_title_content">
-            <h2 class="service_title">
+            <h2 class="service_title" itemprop="name">
                 Какво предлагаме
             </h2>
-            <p class="service_sub_tite">
+            <p class="service_sub_tite" itemprop="description">
                 Предлагаме цялостни решения за дигитално присъствие и развитие на вашия бизнес
             </p>
         </div>
         <div class="services_boxes">
-            <div class=" web_dev">
+            <div class=" web_dev" itemscope itemtype="https://schema.org/Service">
                 <img
                         src="images/web_dev_icon.svg"
-                        srcset="images/web_dev_icon.svg 400w, images/web_dev_icon.svg 800w, images/web_dev_icon.svg 1200w"
-                        sizes="(max-width: 600px) 400px, (max-width: 1200px) 800px, 1200px"
-                        alt="web_dev_icon"
-                        loading="lazy"
-                        class="service_icons">
-                <h3>Web Development</h3>
-                <p>Разработка на модерни, бързи и сигурни уеб сайтове с най-новите технологии и best practices.</p>
+                        alt="Web Development и SEO оптимизация"
+                        fetchpriority="high"
+                        class="service_icons"
+                        itemprop="image">
+                <h3 itemprop="name">Web Development</h3>
+                <p itemprop="description">Разработка на модерни, бързи и сигурни уеб сайтове с най-новите технологии и
+                    best practices.</p>
             </div>
-            <div class="web_app">
+            <div class="web_app" itemscope itemtype="https://schema.org/Service">
                 <img
                         src="images/web_app_icon.svg"
-                        srcset="images/web_app_icon.svg 400w, images/web_app_icon.svg 800w, images/web_app_icon.svg 1200w"
-                        sizes="(max-width: 600px) 400px, (max-width: 1200px) 800px, 1200px"
-                        alt="web_app_icon"
-                        loading="lazy"
-                        class="service_icons">
-                <h3>Web Applications</h3>
-                <p>Custom web applications и SaaS решения, оптимизирани за производителност и потребителско
+                        alt="Custom Web Applications"
+                        fetchpriority="high"
+                        class="service_icons"
+                        itemprop="image">
+                <h3 itemprop="name">Web Applications</h3>
+                <p itemprop="description">Custom web applications и SaaS решения, оптимизирани за производителност и
+                    потребителско
                     изживяване.</p>
             </div>
-            <div class="web_custom">
+            <div class="web_custom" itemscope itemtype="https://schema.org/Service">
                 <img
                         src="images/web_custom_img.svg"
-                        srcset="images/web_custom_img.svg 400w, images/web_custom_img.svg 800w, images/web_custom_img.svg 1200w"
-                        sizes="(max-width: 600px) 400px, (max-width: 1200px) 800px, 1200px"
-                        alt="web_custom_img"
-                        loading="lazy"
-                        class="service_icons">
-                <h3>Custom Web Solutions</h3>
-                <p>Индивидуални софтуерни решения, напълно адаптирани към специфичните нужди на вашия бизнес.</p>
+                        alt="Custom уеб решения за бизнес"
+                        fetchpriority="high"
+                        class="service_icons"
+                        itemprop="image">
+                <h3 itemprop="name">Custom Web Solutions</h3>
+                <p itemprop="description">Индивидуални софтуерни решения, напълно адаптирани към специфичните нужди на
+                    вашия бизнес.</p>
             </div>
-            <div class="web_deign">
+            <div class="web_deign" itemscope itemtype="https://schema.org/Service">
                 <img
                         src="images/web_design_icon.svg"
-                        srcset="images/web_design_icon.svg 400w, images/web_design_icon.svg 800w, images/web_design_icon.svg 1200w"
-                        sizes="(max-width: 600px) 400px, (max-width: 1200px) 800px, 1200px"
-                        alt="web_design_icon"
-                        loading="lazy"
-                        class="service_icons">
-                <h3>UI/UX Design</h3>
-                <p>Изключителен дизайн и потребителско изживяване, което превръща посетителите в клиенти.</p>
+                        alt="UI/UX дизайн за оптимално потребителско изживяване"
+                        fetchpriority="high"
+                        class="service_icons"
+                        itemprop="image">
+                <h3 itemprop="name">UI/UX Design</h3>
+                <p itemprop="description">Изключителен дизайн и потребителско изживяване, което превръща посетителите в
+                    клиенти.</p>
             </div>
         </div>
     </section>
-    <section id="about_us">
-        <img class="about_us_icon" src="images/about_us_icon.svg" alt="about_us_icon" srcset=""/>
+    <section id="about_us" itemscope itemtype="https://schema.org/Organization">
+        <img class="about_us_icon"
+             src="images/about_us_icon.svg"
+             alt="Екип София Софт"
+             itemprop="logo"
+
+             fetchpriority="high"
+        />
 
         <div class="about_us_rigth_side">
             <span class="about_us_budget">
@@ -144,10 +182,10 @@
             </span>
 
             <div class="about_us_title_content">
-                <h2 class="about_us_title">
+                <h2 class="about_us_title" itemprop="name">
                     Защо да изберете <span class="about_us_sub_title">София Софт</span>
                 </h2>
-                <p>
+                <p itemprop="description">
                     Ние сме екип от позитивни специалисти, които обичат да създават дигитални продукти. Съчетаваме
                     технологична експертиза с бизнес разбиране, за да доставяме решения, които не само работят
                     перфектно, но
@@ -161,28 +199,22 @@
                 <ul class="about_us_list">
                     <li><img
                             src="images/check_icon.svg"
-                            srcset="images/check_icon.svg 400w, images/check_icon.svg 800w, images/check_icon.svg 1200w"
-                            sizes="(max-width: 600px) 400px, (max-width: 1200px) 800px, 1200px"
-                            alt="check"
-                            loading="lazy"
+                            alt="Реални решения"
+                            fetchpriority="high"
                             class="check">
                         Реални решения, не просто код
                     </li>
                     <li><img
                             src="images/check_icon.svg"
-                            srcset="images/check_icon.svg 400w, images/check_icon.svg 800w, images/check_icon.svg 1200w"
-                            sizes="(max-width: 600px) 400px, (max-width: 1200px) 800px, 1200px"
-                            alt="check"
-                            loading="lazy"
+                            alt="Ясна комуникация"
+                            fetchpriority="high"
                             class="check">
                         Ясна комуникация без „технически мъгли“
                     </li>
                     <li><img
                             src="images/check_icon.svg"
-                            srcset="images/check_icon.svg 400w, images/check_icon.svg 800w, images/check_icon.svg 1200w"
-                            sizes="(max-width: 600px) 400px, (max-width: 1200px) 800px, 1200px"
-                            alt="check"
-                            loading="lazy"
+                            alt="UX focus"
+                            fetchpriority="high"
                             class="check">
                         Фокус върху бързина, стабилност и UX
                     </li>
@@ -190,28 +222,22 @@
                 <ul class="about_us_list">
                     <li><img
                             src="images/check_icon.svg"
-                            srcset="images/check_icon.svg 400w, images/check_icon.svg 800w, images/check_icon.svg 1200w"
-                            sizes="(max-width: 600px) 400px, (max-width: 1200px) 800px, 1200px"
-                            alt="check"
-                            loading="lazy"
+                            alt="Модерни технологии"
+                            fetchpriority="high"
                             class="check">
                         Модерни технологии, използвани разумно
                     </li>
                     <li><img
                             src="images/check_icon.svg"
-                            srcset="images/check_icon.svg 400w, images/check_icon.svg 800w, images/check_icon.svg 1200w"
-                            sizes="(max-width: 600px) 400px, (max-width: 1200px) 800px, 1200px"
-                            alt="check"
-                            loading="lazy"
+                            alt="Гъвкав процес"
+                            fetchpriority="high"
                             class="check">
                         Гъвкав процес, съобразен с твоя бизнес
                     </li>
                     <li><img
                             src="images/check_icon.svg"
-                            srcset="images/check_icon.svg 400w, images/check_icon.svg 800w, images/check_icon.svg 1200w"
-                            sizes="(max-width: 600px) 400px, (max-width: 1200px) 800px, 1200px"
-                            alt="check"
-                            loading="lazy"
+                            alt="Поддръжка"
+                            fetchpriority="high"
                             class="check">
                         Поддръжка и партньорство, не изчезваме след launch
                     </li>
@@ -219,79 +245,71 @@
             </div>
         </div>
     </section>
-    <section id="how_work">
+    <section id="how_work" itemscope itemtype="https://schema.org/HowTo">
        <span class="how_work_budget">
                     Нашият Процес
        </span>
         <div class="how_work_title_content">
 
-            <h2 class="how_work_title">
+            <h2 class="how_work_title" itemprop="name">
                 Как работим
             </h2>
-            <p class="how_work_sub_tite">
+            <p class="how_work_sub_tite" itemprop="description">
                 Структуриран и прозрачен подход за успешна реализация на всеки проект.
             </p>
         </div>
         <div class="how_work_boxes">
-            <div class="analyze">
+            <div class="analyze" itemscope itemtype="https://schema.org/HowToStep">
                 <span class="indicator">1</span>
                 <img
                         src="images/analyze_icon.svg"
-                        srcset="images/analyze_icon.svg 400w, images/analyze_icon.svg 800w, images/analyze_icon.svg 1200w"
-                        sizes="(max-width: 600px) 400px, (max-width: 1200px) 800px, 1200px"
-                        alt="analyze_icon"
-                        loading="lazy"
+                        alt="Консултация и анализ"
+                        fetchpriority="high"
                         class="how_work_icons">
-                <h3>Консултация и Анализ</h3>
-                <p>Разбираме вашите цели, анализираме нуждите и дефинираме обхвата на проекта.</p>
+                <h3 itemprop="name">Консултация и Анализ</h3>
+                <p itemprop="text">Разбираме вашите цели, анализираме нуждите и дефинираме обхвата на проекта.</p>
             </div>
-            <div class="design">
+            <div class="design" itemscope itemtype="https://schema.org/HowToStep">
                 <span class="indicator">2</span>
                 <img
                         src="images/design_icon.svg"
-                        srcset="images/design_icon.svg 400w, images/design_icon.svg 800w, images/design_icon.svg 1200w"
-                        sizes="(max-width: 600px) 400px, (max-width: 1200px) 800px, 1200px"
-                        alt="design_icon"
-                        loading="lazy"
+                        alt="Дизайн и планиране"
+                        fetchpriority="high"
                         class="how_work_icons">
-                <h3>Дизайн и Планиране</h3>
-                <p>Създаваме дизайн концепция, UX/UI wireframes и детайлен план за изпълнение.</p>
+                <h3 itemprop="name">Дизайн и Планиране</h3>
+                <p itemprop="text">Създаваме дизайн концепция, UX/UI wireframes и детайлен план за изпълнение.</p>
             </div>
-            <div class="developmant">
+            <div class="developmant" itemscope itemtype="https://schema.org/HowToStep">
                 <span class="indicator">3</span>
                 <img
                         src="images/coding_icon.svg"
-                        srcset="images/coding_icon.svg 400w, images/coding_icon.svg 800w, images/coding_icon.svg 1200w"
-                        sizes="(max-width: 600px) 400px, (max-width: 1200px) 800px, 1200px"
-                        alt="coding_icon"
-                        loading="lazy"
+                        alt="Разработка на проекта"
+                        fetchpriority="high"
                         class="how_work_icons">
-                <h3>Разработка</h3>
-                <p>Имплементираме решението с clean code, best practices и съвременни технологии.</p>
+                <h3 itemprop="name">Разработка</h3>
+                <p itemprop="text">Имплементираме решението с clean code, best practices и съвременни технологии.</p>
             </div>
-            <div class="final">
+            <div class="final" itemscope itemtype="https://schema.org/HowToStep">
                 <span class="indicator">4</span>
                 <img
                         src="images/final_icon.svg"
-                        srcset="images/final_icon.svg 400w, images/final_icon.svg 800w, images/final_icon.svg 1200w"
-                        sizes="(max-width: 600px) 400px, (max-width: 1200px) 800px, 1200px"
-                        alt="final_icon"
-                        loading="lazy"
+                        alt="Тестване и пускане"
+                        fetchpriority="high"
                         class="how_work_icons">
-                <h3>Тестване и Пускане</h3>
-                <p>Tестване, оптимизация, deployment и follow-up поддръжка.</p>
+                <h3 itemprop="name">Тестване и Пускане</h3>
+                <p itemprop="text">Tестване, оптимизация, deployment и follow-up поддръжка.</p>
             </div>
         </div>
     </section>
-    <section id="contact">
+    <section id="contact" itemscope itemtype="https://schema.org/ContactPage">
            <span class="contact_budget">
                 Започнете вашия проект днес
             </span>
         <div class="contact_title_content">
-            <h2 class="contact_title">
+            <h2 class="contact_title" itemprop="name">
                 Започнете вашия проект днес
             </h2>
-            <p class="how_work_sub_tite">
+            <p class="how_work_sub_tite" itemprop="description">
                 Готови сме да обсъдим вашите идеи и да ги превърнем в реалност
             </p>
         </div>
@@ -309,43 +327,35 @@
                         <li>
                             <img
                                     src="images/mail_icon.svg"
-                                    srcset="images/mail_icon.svg 400w, images/mail_icon.svg 800w, images/mail_icon.svg 1200w"
-                                    sizes="(max-width: 600px) 400px, (max-width: 1200px) 800px, 1200px"
-                                    alt="mail_icon"
-                                    loading="lazy"
+                                    alt="Email София Софт"
+                                    fetchpriority="high"
                                     class="contact_icons">
                             <div>
                                 <span>
                                     Email
                                 </span>
-                                <a href="">info@sofia-soft.com</a>
+                                <a href="mailto:contact.sofiasoft@gmail.com">contact.sofiasoft@gmail.com</a>
                             </div>
-
                         </li>
                         <li>
                             <img
                                     src="images/phone_icon.svg"
-                                    srcset="images/phone_icon.svg 400w, images/phone_icon.svg 800w, images/phone_icon.svg 1200w"
-                                    sizes="(max-width: 600px) 400px, (max-width: 1200px) 800px, 1200px"
-                                    alt="phone_icon"
-                                    loading="lazy"
+                                    alt="Телефон София Софт"
+                                    fetchpriority="high"
                                     class="contact_icons">
                             <div>
                                 <span>
-                                    Теленоф
+                                    Телефон
                                 </span>
-                                <a href="">+359 888 123 456</a>
+                                <a href="tel:+3598964366858">+359 896 436 6858</a>
                             </div>
                         </li>
-
                     </ul>
                 </div>
                 <img
                         src="images/contact_icon.svg"
-                        srcset="images/contact_icon.svg 400w, images/contact_icon.svg 800w, images/contact_icon.svg 1200w"
-                        sizes="(max-width: 600px) 400px, (max-width: 1200px) 800px, 1200px"
-                        alt="contact_icon"
-                        loading="lazy"
+                        alt="Контакт София Софт"
+                        fetchpriority="high"
                         class="contact_icon">
             </div>
         </div>
@@ -354,16 +364,17 @@
 <footer>
     <img
             src="images/logo.svg"
-            srcset="images/logo.svg 400w, images/logo.svg 800w, images/logo.svg 1200w"
-            sizes="(max-width: 600px) 400px, (max-width: 1200px) 800px, 1200px"
+
+
             alt="logo"
-            loading="lazy"
+            fetchpriority="high"
             class="logo">
 
-        <span>
+    <span>
             © 2026 София Софт. Всички права запазени.
         </span>
 </footer>
 <script src="js/scroll.js"></script>
+<script src="js/burger.js"></script>
 </body>
 </html>
