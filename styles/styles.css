@@ -64,7 +64,7 @@ section {
     display: block;
     width: 150px;
     background-color: rgba(97, 164, 255, 0.15);
-    color: rgba(97, 164, 255, 0.95);
+    color: #132133;
     border: 1px solid rgba(97, 164, 255, 0.2);
     border-radius: 20px;
     text-align: center;
@@ -171,8 +171,7 @@ section {
     border-radius: 12px;
     color: var(--primary-color);
     background-color: var(--second-primary-color);
-    padding: 8px 4px;
-    width: 120px;
+    padding: 12px 6px;
     text-align: center;
 }
 
