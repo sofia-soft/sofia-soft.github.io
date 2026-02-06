@@ -593,9 +593,7 @@ footer > span {
 
 */
 
-/* ===============================
-   GLOBAL FIXES
-================================ */
+
 
 body {
     overflow-x: hidden;
@@ -612,9 +610,6 @@ img {
     min-width: 0;
 }
 
-/* ===============================
-   TABLET (≤ 1024px)
-================================ */
 
 @media (max-width: 1024px) {
 
@@ -630,6 +625,10 @@ img {
     #hero {
         min-height: unset;
         padding-top: 80px;
+    }
+
+    .hero_budget {
+        display: none;
     }
 
     .hero_content {
@@ -720,9 +719,6 @@ img {
     }
 }
 
-/* ===============================
-MOBILE (≤ 768px)
-================================ */
 
 @media (max-width: 768px) {
 
@@ -840,9 +836,6 @@ MOBILE (≤ 768px)
 
 }
 
-/* ===============================
-   SMALL MOBILE (≤ 480px)
-================================ */
 
 @media (max-width: 480px) {
 
