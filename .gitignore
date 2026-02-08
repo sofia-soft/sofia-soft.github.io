@@ -1,4 +1,4 @@
 .idea
-styles/reset.css
-styles/responsive.css
-styles/styles.css
+.styles/reset.css
+.styles/responsive.css
+.styles/styles.css

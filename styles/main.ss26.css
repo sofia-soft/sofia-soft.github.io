@@ -28,25 +28,12 @@
     font-display: swap;
 }
 
-body,
-html {
-    box-sizing: border-box;
-    margin: 0;
-}
 
-* {
+*, *::before, *::after {
     box-sizing: border-box;
 }
 
-*,
-*:before,
-*:after {
-    box-sizing: inherit;
-}
 
-main {
-    margin: 15px 0 0 15px;
-}
 
 html, body {
     height: 100%;
@@ -73,6 +60,7 @@ main {
 section {
     min-height: 80vh;
     scroll-snap-align: start;
+    padding: 0 40px;
 }
 
 .scroll_up {
@@ -106,6 +94,7 @@ section {
 */
 
 .service_budget, .about_us_budget, .how_work_budget, .contact_budget {
+    font-size: 1rem;
     display: block;
     width: 150px;
     background-color: rgba(97, 164, 255, 0.15);
@@ -133,7 +122,7 @@ section {
 .service_title,
 .how_work_title {
     margin-top: 0;
-    font-size: 3rem;
+    font-size: 2.20rem;
 }
 
 
@@ -142,8 +131,7 @@ section {
     flex-direction: row;
     align-items: center;
     justify-content: space-around;
-    width: 80%;
-    gap: 80px;
+    width: 100%;
 }
 
 .services_boxes > div,
@@ -152,10 +140,7 @@ section {
     border: 1px solid #edeeef;
     box-shadow: 8px 6px 8px 0 rgba(237, 238, 239, 0.6);
     border-radius: 8px;
-    padding: 30px 44px;
-    width: 80%;
-    gap: 80px;
-    height: 300px;
+    padding: 30px 40px;
     cursor: pointer;
 }
 
@@ -216,8 +201,11 @@ section {
     border-radius: 12px;
     color: var(--primary-color);
     background-color: var(--second-primary-color);
-    padding: 12px 6px;
     text-align: center;
+    width: 8.281rem;
+    height: 2.750rem;
+    align-content: center;
+    font-size: 1.250rem;
 }
 
 .nav_list > li:hover {
@@ -268,6 +256,7 @@ section {
     color: white;
     overflow: hidden;
     background-color: var(--primary-color);
+    margin: 0;
 }
 
 .hero_content {
@@ -291,24 +280,24 @@ section {
 }
 
 .hero_title {
-    font-size: 3.05rem;
+    font-size: 2.20rem;
 }
 
 .hero_sub_title {
-    font-size: 1.225rem;
+    font-size: 1.250rem;
     max-width: 100%;
     overflow-wrap: break-word;
 }
 
 .hero_button_more {
-    width: 200px;
+    width: 13rem;
     padding: 0.5rem;
     background-color: transparent;
     border: 1px solid rgba(192, 192, 192, 0.5);
     border-radius: 12px;
     color: white;
     cursor: pointer;
-    font-size: 1.225rem;
+    font-size: 1.250rem;
 
 }
 
@@ -333,19 +322,58 @@ section {
 }
 
 .hero_budget {
-    font-size: 14px;
+    font-size: 1rem;
     border-radius: 30px;
     border: 1px solid rgba(97, 164, 255, 0.1);
     background-color: rgba(97, 164, 255, 0.1);
     color: rgba(97, 164, 255, 0.7);
     padding: 8px 6px;
-    width: 250px;
+    width: 19.500rem;
     text-align: center;
 }
 
 .hero_title_second {
     color: var(--second-primary-color);
 }
+
+/*
+
+    Service section
+
+*/
+
+.service_budget {
+    width: 13rem;
+}
+
+.service_sub_tite {
+    font-size: 1.250rem;
+}
+
+.services_boxes {
+    gap: 20px;
+}
+
+.services_boxes > div{
+    width: 20.250rem;
+    height: 24.438rem;
+    gap: 20px;
+}
+
+.services_boxes > div > h3 {
+    font-size: 1.169rem;
+}
+
+.services_boxes > div > p {
+    font-size: 1rem;
+}
+
+.service_icons {
+    width: 13.948rem;
+    height: 10.682rem;
+}
+
+
 
 /*
 
@@ -364,12 +392,17 @@ section {
     width: 700px;
 }
 
+.about_us_budget {
+    width: 7.125rem;
+}
+
 .about_us_rigth_side {
     width: 40%;
 }
 
 .about_us_title {
-    font-size: 3rem;
+    width: 36rem;
+    font-size: 2.200rem;
 }
 
 .about_us_sub_title {
@@ -384,6 +417,10 @@ section {
     width: 100%;
 }
 
+.about_us_title_content {
+    font-size: 1.250rem;
+}
+
 .about_us_list {
     list-style: none;
     padding-left: 0;
@@ -396,12 +433,14 @@ section {
 .about_us_list > li {
     display: flex;
     flex-direction: row;
+    font-size: 1rem;
     gap: 10px;
     max-width: 100%;
     width: auto;
     overflow-wrap: break-word;
     align-items: center;
     padding-block: 8px;
+    text-align: left;
 }
 
 
@@ -416,10 +455,32 @@ section {
 
 */
 
+.how_work_budget {
+    width: 12.875rem;
+}
+
+.how_work_sub_tite {
+    font-size: 1.250rem;
+}
 .how_work_boxes > div {
+    width: 16.625rem;
+    height: 25rem;
     position: relative;
     text-align: center;
 }
+
+.how_work_boxes > div > h3 {
+    font-size: 1.169rem;
+}
+
+.how_work_boxes > div > p {
+    font-size: 1rem;
+}
+
+.how_work_icons {
+    width: 10.482rem;
+}
+
 
 .indicator {
     position: absolute;
@@ -446,7 +507,7 @@ section {
     justify-content: center;
     align-items: center;
     gap: 40px;
-    padding: 70px 0;
+    padding: 70px 40px;
 
 }
 
@@ -455,36 +516,46 @@ section {
 }
 
 .contact_title {
-    font-size: 3rem;
+    font-size: 2.200rem;
+}
+
+.how_work_sub_title{
+    font-size:1.250rem;
 }
 
 .contact_budget {
-    width: 300px;
+    font-size: 1rem;
+    width: 9.375rem;
+    padding: 8px 6px;
 }
 
 .contact_boxes {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-evenly;
     width: 100%;
+    gap: 45px;
 
 }
 
 .contact_form {
     text-align: center;
-    height: 700px;
+    width: 38.250rem;
+    height: 43.750rem;
     background-color: #f9fafb;
     box-shadow: 8px 6px 8px 0 rgba(237, 238, 239, 0.6);
-    width: 40%;
     border-radius: 30px;
 
+}
+
+.contact_form > h3{
+    font-size: 1.800rem;
 }
 
 .form {
     align-content: center;
     height: 100%;
-    font-size: 50px;
+    font-size: 3.125rem;
     color: var(--primary-contrast-color);
 }
 
@@ -534,15 +605,19 @@ section {
 .contact_box_info {
     display: flex;
     flex-direction: column;
-    gap: 50px;
+    gap: 45px;
     min-width: 0;
+    height: 43.750rem;
+    width: 25.048rem;
+
 
 }
 
 
 .contact_box_info > div {
     background-color: #f9fafb;
-    width: 100%;
+    width: 43.750rem;
+    height: 17.152rem;
     padding: 30px;
     box-shadow: 8px 6px 8px 0 rgba(237, 238, 239, 0.6);
     border-radius: 30px;
@@ -550,13 +625,22 @@ section {
 
 }
 
+.contact_box_info > div > h3 {
+    font-size: 1.800rem;
+
+}
+
+.contact_box_info > div:last-child {
+    height: 25rem;
+}
 
 .contact_icon {
-    padding: 50px;
-    width: 700px;
-    background-color: #f9fafb;
-    box-shadow: 8px 6px 8px 0 rgba(237, 238, 239, 0.6);
-    border-radius: 30px;
+    /*padding: 50px;*/
+    width: 37.500rem;
+    height: 18.799rem;
+    /*background-color: #f9fafb;*/
+    /*box-shadow: 8px 6px 8px 0 rgba(237, 238, 239, 0.6);*/
+    /*border-radius: 30px;*/
 }
 
 
@@ -574,7 +658,7 @@ footer {
     scroll-snap-align: none;
     padding: 80px;
     border-top: 1px solid var(--primary-color);
-    margin: 0 9%;
+    margin: 0 3%;
 }
 
 footer > .logo {
@@ -615,6 +699,7 @@ img {
 
     section {
         padding-top: 50px;
+        padding-bottom: 50px;
     }
 
     .nav_list {
@@ -624,7 +709,7 @@ img {
 
     #hero {
         min-height: unset;
-        padding-top: 80px;
+        padding-top: 120px;
     }
 
     .hero_budget {
@@ -646,6 +731,7 @@ img {
     }
 
     .hero_sub_title {
+        font-size: 1.250rem;
         max-width: 600px;
     }
 
@@ -694,7 +780,7 @@ img {
 
     .contact_boxes {
         flex-direction: column;
-        gap: 40px;
+        gap: 45px;
     }
 
     .contact_form,
@@ -724,9 +810,13 @@ img {
 
     .header {
         flex-direction: row;
-        height: auto;
+        height: 60px;
         gap: 20px;
         padding: 20px;
+    }
+
+    .logo {
+        width: 100px;
     }
 
     .nav_list {
@@ -744,7 +834,7 @@ img {
     }
 
     .nav_list.active {
-        display: flex; /* показване при click */
+        display: flex;
     }
 
     .burger {
@@ -752,34 +842,13 @@ img {
         flex-direction: column;
         justify-content: space-between;
         cursor: pointer;
-        z-index: 1000; /* да е над менюто */
+        z-index: 1000;
     }
 
     .burger svg {
         cursor: pointer;
         transition: transform 0.3s ease;
-    }
-
-    .burger svg rect {
-        transition: all 0.3s ease;
-        rx: 2; /* за заоблени краища */
-    }
-
-    /* При отворено меню */
-    .burger.active svg rect:nth-child(1) {
-        transform: rotate(45deg) translate(15px, 15px);
-    }
-
-    .burger.active svg rect:nth-child(2) {
-        opacity: 0;
-    }
-
-    .burger.active svg rect:nth-child(3) {
-        transform: rotate(-45deg) translate(15px, -15px);
-    }
-
-    .nav_list.active {
-        display: flex;
+        width: 35px;
     }
 
     .hero_title {
@@ -790,9 +859,12 @@ img {
     .how_work_title,
     .about_us_title,
     .contact_title {
-        font-size: 2.2rem;
+        font-size: 2.20rem;
     }
 
+    .about_us_title {
+        width: unset;
+    }
     .hero_img {
         width: 100%;
         max-width: 350px;
@@ -830,6 +902,15 @@ img {
         font-size: 32px;
     }
 
+    .contact_box_info > div {
+        width: unset;
+        height: unset;
+    }
+
+    footer {
+        margin: 60px;
+    }
+
     footer > .logo {
         width: 180px;
     }
@@ -848,7 +929,7 @@ img {
     }
 
     .hero_sub_title {
-        font-size: 1rem;
+        font-size: 1.250rem;
     }
 
     .nav_list > li {
