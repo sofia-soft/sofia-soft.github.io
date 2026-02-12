@@ -670,12 +670,44 @@ footer > span {
 
 }
 
+.page_not_found {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 30px;
+    height: 100%;
 
-/*
+}
 
-    Responsive
+.page_not_found > img {
+    width: 35rem;
+}
 
-*/
+.page_not_found_desc {
+    text-align: center;
+    color: var(--primary-contrast-color);
+}
+.page_not_found > a {
+    border: 1px solid var(--primary-color);
+    padding: 0.8rem;
+    border-radius: 12px;
+    text-decoration: none;
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.page_not_found > a:hover {
+    background-color: var(--second-primary-color);
+}
+
+
+
+    /*
+
+        Responsive
+
+    */
 
 
 
