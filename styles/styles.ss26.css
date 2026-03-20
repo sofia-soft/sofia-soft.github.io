@@ -9,6 +9,17 @@
     --porcelain: #EDEEEF;
     --white: #FFFFFF;
 
+    --bg:#090814;
+    --surface:#0f1220;
+    --card:#12162a;
+    --blue:#61A4FF;
+    --blue-light:#B6D5FF;
+    --gray:#d6d6e3;
+    --gray2:#e6e6e6;
+    --mid:#3f3d56;
+    --dim:rgba(214,214,227,.25);
+    --border:rgba(97,164,255,.14);
+
     --malibu-15: rgba(97, 164, 255, 0.15);
     --malibu-20: rgba(97, 164, 255, 0.20);
     --header-bg: rgba(19, 33, 51, 0.70);
@@ -159,7 +170,8 @@ section {
 .header {
     position: fixed;
     top: 0;
-    left: 0;
+    left: 50%;
+    transform: translateX(-50%);
     width: 100%;
     z-index: 1000;
     height: 86px;
@@ -169,6 +181,14 @@ section {
     padding: 10px 20px;
     background: rgba(19, 33, 51, 0.7);
     backdrop-filter: blur(5px);
+    transition:
+            width         .5s cubic-bezier(.4, 0, .2, 1),
+            top           .5s cubic-bezier(.4, 0, .2, 1),
+            border-radius .5s cubic-bezier(.4, 0, .2, 1),
+            background    .5s cubic-bezier(.4, 0, .2, 1),
+            box-shadow    .5s cubic-bezier(.4, 0, .2, 1),
+            padding       .5s cubic-bezier(.4, 0, .2, 1),
+            height        .5s cubic-bezier(.4, 0, .2, 1);
 }
 
 .logo {
@@ -254,6 +274,40 @@ nav > .nav_list li a.active {
     border-bottom: none;
 }
 
+/**/
+
+nav > .nav_list li:last-child {
+    display: none;
+}
+
+/* Покажи го само в мобилното меню */
+.header.nav-open nav > .nav_list li:last-child {
+    display: block;
+}
+
+/* Стил на бутона */
+.header.nav-open nav > .nav_list li:last-child a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin: 12px 24px;
+    padding: 13px 28px;
+    background: var(--malibu);
+    border-radius: 10px;
+    color: #fff !important;
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    transition: background .2s, transform .2s, box-shadow .2s;
+    border-bottom: none !important;
+}
+
+.header.nav-open nav > .nav_list li:last-child a:hover {
+    background: #7ab8ff;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(97, 164, 255, 0.35);
+}
+
+/**/
 .header.nav-open nav > .nav_list li a {
     display: block;
     padding: 15px 24px;
@@ -359,6 +413,7 @@ nav > .nav_list li a.active {
     }
 }
 
+
 /*
    Hero
 */
@@ -415,7 +470,7 @@ nav > .nav_list li a.active {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 16px;
+    gap: 45px;
     width: 100%;
     max-width: 390px;
 }
@@ -424,7 +479,7 @@ nav > .nav_list li a.active {
    Hero Title
 */
 .hero_title {
-    font-size: 28.8px;
+    font-size: 28px;
     font-weight: 700;
     line-height: 35px;
     color: var(--white);
@@ -502,7 +557,7 @@ nav > .nav_list li a.active {
 }
 
 .service_title {
-    font-size: 28.8px;
+    font-size: 28px;
     font-weight: 700;
     line-height: 35px;
     color: var(--big-stone);
@@ -549,6 +604,7 @@ nav > .nav_list li a.active {
 .services_boxes > div:hover {
     box-shadow: 8px 6px 8px rgba(19, 33, 51, 0.2);
     transform: translateY(-4px);
+    border-color: var(--malibu);
 }
 
 /*
@@ -629,7 +685,7 @@ nav > .nav_list li a.active {
    About Us Title Text
 */
 .about_us_title {
-    font-size: 28.8px;
+    font-size: 28px;
     font-weight: 700;
     line-height: 35px;
     color: var(--athens-gray);
@@ -656,7 +712,8 @@ nav > .nav_list li a.active {
     flex-direction: column;
     align-items: center;
     gap: 35px;
-    display: flex;}
+    display: flex;
+}
 
 /*
    About Us Lists
@@ -724,7 +781,7 @@ nav > .nav_list li a.active {
    How Work Title Text
 */
 .how_work_title {
-    font-size: 28.8px;
+    font-size: 28px;
     font-weight: 700;
     line-height: 35px;
     color: var(--big-stone);
@@ -775,6 +832,8 @@ nav > .nav_list li a.active {
 .how_work_boxes > div:hover {
     box-shadow: 8px 6px 8px rgba(19, 33, 51, 0.2);
     transform: translateY(-4px);
+    border-color: var(--malibu);
+
 }
 
 /*
@@ -854,7 +913,7 @@ nav > .nav_list li a.active {
    Contact Title Text
 */
 .contact_title {
-    font-size: 28.8px;
+    font-size: 28px;
     font-weight: 700;
     line-height: 35px;
     color: var(--athens-gray);
@@ -924,7 +983,7 @@ nav > .nav_list li a.active {
 /*}*/
 
 .form label {
-    font-size: 13px;
+    font-size: 16px;
     font-weight: 600;
     color: var(--big-stone);
     letter-spacing: .01em;
@@ -1480,12 +1539,39 @@ footer {
         padding-top: 60px;
     }
 
-    .header {
-        height: 100px;
-        padding: 0 60px;
-        justify-content: space-between;
+    .header.shrunk {
+        top:           14px !important;
+        width:         88% !important;
+        max-width:     1100px !important;
+        height:        82px !important;
+        border-radius: 100px !important;
+        background:    rgba(13, 18, 32, 0.88) !important;
+        backdrop-filter:         blur(18px) !important;
+        -webkit-backdrop-filter: blur(18px) !important;
+        border:        1px solid rgba(255, 255, 255, 0.09) !important;
+        box-shadow:    0 8px 32px rgba(0, 0, 0, 0.35),
+        0 0 0 1px rgba(97, 164, 255, 0.06) !important;
+        padding:       0 36px !important;
     }
 
+    /* Лого — почти без промяна */
+    .header.shrunk .logo {
+        height:     60px !important;
+        transition: height .5s cubic-bezier(.4, 0, .2, 1);
+    }
+
+    /* Nav links — същият размер */
+    .header.shrunk nav > .nav_list li a {
+        font-size: 20px !important;
+    }
+
+    /* CTA бутон — минимална разлика */
+    .header.shrunk .contact,
+    .header.shrunk .header_cta {
+        padding:       11px 22px !important;
+        font-size:     19px      !important;
+        border-radius: 100px     !important;
+    }
     .logo {
         width: 101px;
         height: 87px;
@@ -1670,7 +1756,11 @@ footer {
     }
 
     .contact_form h3 {
-        font-size: 28.8px;
+        font-size: 28px;
+    }
+
+    .form label {
+        font-size: 20px;
     }
 
     .contact_form {
@@ -1699,7 +1789,7 @@ footer {
     }
 
     .contact_box_info > div:first-child h3 {
-        font-size: 28.8px;
+        font-size: 28px;
         text-align: center;
     }
 
@@ -1717,9 +1807,10 @@ footer {
     }
 
     .footer_bottom {
-        align-items: flex-start;
         flex-shrink: 0;
         width: 450px;
+        align-items: center;
+        gap: 35px;
     }
 
     .footer_logo {
@@ -1757,7 +1848,7 @@ footer {
     }
 
     .footer_info {
-        flex-direction: row-reverse;
+        flex-direction: row;
         justify-content: space-around;
         width: 100%;
     }
@@ -1813,6 +1904,10 @@ footer {
         padding: 100px 120px;
     }
 
+    .contact_box_info {
+        gap: 125px;
+    }
+
     footer {
         padding: 60px 50px 48px;
     }
@@ -1862,4 +1957,6 @@ footer {
     .footer_contact_list {
         align-items: start;
     }
+
+
 }
