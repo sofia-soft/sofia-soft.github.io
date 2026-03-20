@@ -11,27 +11,35 @@
           content="София Софт предлага професионални уеб решения, custom приложения и UI/UX дизайн за растеж на вашия бизнес.">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://sofia-soft.github.io/">
-    <meta name="google-site-verification" content="kzqQhkPF8Q6BBH1XmQo9DohQY9jNInRDO871MoEqcn0" />
+    <meta name="google-site-verification" content="kzqQhkPF8Q6BBH1XmQo9DohQY9jNInRDO871MoEqcn0"/>
+
+    <!-- Favicon -->
     <link rel="shortcut icon" href="images/favicon.ss26.svg" type="image/svg+xml">
     <link rel="icon" type="image/png" sizes="32x32" href="images/favicon.ss26.svg">
     <link rel="apple-touch-icon" sizes="180x180" href="images/favicon.ss26.svg">
     <meta name="theme-color" content="#132133">
+    <!-- FIX: добавен apple status bar за iOS Safari -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
-    <meta property="og:image" content="https://sofia-soft.github.io/images/logo.png">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-    <meta property="og:image:type" content="image/svg+xml">
-
+    <!-- Open Graph — FIX: og:image type поправен на image/png, og:url добавен -->
+    <meta property="og:url" content="https://sofia-soft.github.io/">
     <meta property="og:type" content="website">
     <meta property="og:title" content="София Софт – Иновативни уеб решения за вашия бизнес">
     <meta property="og:description"
           content="София Софт предлага професионални уеб решения, custom приложения и UI/UX дизайн за растеж на вашия бизнес.">
     <meta property="og:site_name" content="София Софт">
+    <meta property="og:image" content="https://sofia-soft.github.io/images/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:locale" content="bg_BG">
 
+    <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="София Софт – Иновативни уеб решения за вашия бизнес">
     <meta name="twitter:description"
           content="София Софт предлага професионални уеб решения, custom приложения и UI/UX дизайн за растеж на вашия бизнес.">
+    <meta name="twitter:image" content="https://sofia-soft.github.io/images/og-image.png">
     <meta name="twitter:site" content="@SofiaSoft">
     <meta name="twitter:creator" content="@SofiaSoft">
 
@@ -39,78 +47,149 @@
     <link rel="preload" href="fonts/Montserrat-Medium.ss26.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="fonts/Montserrat-Bold.ss26.woff2" as="font" type="font/woff2" crossorigin>
 
-    <link rel="stylesheet" href="styles/main.ss26.css">
+    <link rel="sitemap" type="application/xml" href="/sitemap.xml">
+
+    <link rel="stylesheet" href="styles/styles.css">
 
 </head>
 <body>
-<header class="header">
-    <img
-            src="images/logo.ss26.svg"
-            alt="logo"
-            fetchpriority="high"
-            class="logo">
 
-    <nav>
-        <ul class="nav_list">
-            <li class="home">
-                Начало
-            </li>
-            <li class="services">
-                Услуги
-            </li>
-            <li class="for_us">
-                За нас
-            </li>
-            <li class="how_work">
-                Как работим
-            </li>
-            <li class="contact">
-                Контакти
-            </li>
+<header class="header" role="banner">
+    <a href="#hero" aria-label="София Софт - начална страница">
+        <img
+                src="images/logo.svg"
+                alt="София Софт лого"
+                fetchpriority="high"
+                width="102"
+                height="88"
+                class="logo">
+    </a>
+
+    <nav aria-label="Основна навигация">
+        <ul class="nav_list" role="list">
+            <li><a href="#hero" class="home">Начало</a></li>
+            <li><a href="#services" class="services">Услуги</a></li>
+            <li><a href="#about_us" class="for_us">За нас</a></li>
+            <li><a href="#how_work" class="how_work">Как работим</a></li>
         </ul>
-        <div class="burger" aria-label="Отваряне на навигационно меню" role="button">
-            <svg class="burger-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="44" height="44">
-                <path d="M3 6h18M3 12h18M3 18h18" stroke="#132133" stroke-width="2" stroke-linecap="round"/>
+        <div class="burger" aria-label="Отваряне на навигационно меню" role="button" tabindex="0">
+            <svg class="burger-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="44" height="44"
+                 aria-hidden="true" focusable="false">
+                <path d="M3 6h18M3 12h18M3 18h18" stroke="white" stroke-width="2" stroke-linecap="round"/>
             </svg>
-            <svg class="close-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="44" height="44">
-                <path d="M6 6l12 12M6 18L18 6" stroke="#132133" stroke-width="2" stroke-linecap="round"/>
+            <svg class="close-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="44" height="44"
+                 aria-hidden="true" focusable="false">
+                <path d="M6 6l12 12M6 18L18 6" stroke="white" stroke-width="2" stroke-linecap="round"/>
             </svg>
         </div>
     </nav>
-</header>
-<main>
-    <section id="hero" itemscope itemtype="https://schema.org/WebPageElement">
-        <img
-                src="images/hero.ss26.svg"
-                alt="Иновативни уеб решения от София Софт"
-                fetchpriority="high"
-                class="hero">
 
+    <a class="contact" type="button" href="#contact" aria-label="Заявете услуга от София Софт">Заявка на услуга</a>
+</header>
+
+<main id="main-content">
+
+    <section id="hero" itemscope itemtype="https://schema.org/WebPageElement" aria-label="Начало">
+        <div class="hero" aria-hidden="true">
+            <svg class="hero-svg" width="100%" height="100%" viewBox="0 0 1440 600" preserveAspectRatio="xMidYMid slice"
+                 xmlns="http://www.w3.org/2000/svg">
+                <rect width="1440" height="600" fill="#0d1b2e"/>
+
+                <g stroke="#61A4FF" stroke-width="0.4" opacity="0.07">
+                    <line x1="0" y1="100" x2="1440" y2="100"/>
+                    <line x1="0" y1="200" x2="1440" y2="200"/>
+                    <line x1="0" y1="300" x2="1440" y2="300"/>
+                    <line x1="0" y1="400" x2="1440" y2="400"/>
+                    <line x1="0" y1="500" x2="1440" y2="500"/>
+                    <line x1="200" y1="0" x2="200" y2="600"/>
+                    <line x1="400" y1="0" x2="400" y2="600"/>
+                    <line x1="600" y1="0" x2="600" y2="600"/>
+                    <line x1="800" y1="0" x2="800" y2="600"/>
+                    <line x1="1000" y1="0" x2="1000" y2="600"/>
+                    <line x1="1200" y1="0" x2="1200" y2="600"/>
+                    <line x1="1400" y1="0" x2="1400" y2="600"/>
+                </g>
+
+                <ellipse class="orb1" cx="300" cy="300" rx="400" ry="300" fill="#61A4FF" opacity="0.05"/>
+                <ellipse class="orb2" cx="1200" cy="250" rx="350" ry="280" fill="#315382" opacity="0.08"/>
+
+                <rect class="scan-line" x="-200" y="0" width="200" height="600" fill="#61A4FF" opacity="0.03"/>
+
+                <g class="block1">
+                    <rect x="900" y="60" width="220" height="90" rx="10" fill="#132133" stroke="#61A4FF"
+                          stroke-width="0.8" opacity="0.85"/>
+                    <text x="916" y="88" fill="#61A4FF" font-family="monospace" font-size="13">&lt;div
+                        class="hero"&gt;
+                    </text>
+                    <text x="928" y="108" fill="#9FE1CB" font-family="monospace" font-size="13"> build();</text>
+                    <text x="916" y="128" fill="#61A4FF" font-family="monospace" font-size="13">&lt;/div&gt;</text>
+                </g>
+
+                <g class="block2">
+                    <rect x="1050" y="210" width="260" height="72" rx="10" fill="#132133" stroke="#315382"
+                          stroke-width="0.8" opacity="0.75"/>
+                    <text x="1066" y="238" fill="#9FE1CB" font-family="monospace" font-size="13">const app = launch();
+                    </text>
+                    <text x="1066" y="262" fill="#61A4FF" font-family="monospace" font-size="13">// Sofia Soft ©2026
+                    </text>
+                </g>
+
+                <g class="block3">
+                    <rect x="870" y="350" width="190" height="110" rx="10" fill="#132133" stroke="#61A4FF"
+                          stroke-width="0.8" opacity="0.7"/>
+                    <text x="886" y="376" fill="#B5D4F4" font-family="monospace" font-size="11">function design() {
+                    </text>
+                    <text x="898" y="394" fill="#9FE1CB" font-family="monospace" font-size="11"> return magic;</text>
+                    <text x="886" y="412" fill="#B5D4F4" font-family="monospace" font-size="11">}</text>
+                    <text x="886" y="444" fill="#61A4FF" font-family="monospace" font-size="10">sofia-soft.github.io
+                    </text>
+                </g>
+
+                <g class="block4">
+                    <rect x="1150" y="370" width="200" height="130" rx="8" fill="#0a1525" stroke="#61A4FF"
+                          stroke-width="0.7" opacity="0.7"/>
+                    <rect x="1150" y="370" width="200" height="22" rx="8" fill="#1a2f4a"/>
+                    <circle cx="1163" cy="381" r="4" fill="#E24B4A" opacity="0.8"/>
+                    <circle cx="1178" cy="381" r="4" fill="#EF9F27" opacity="0.8"/>
+                    <circle cx="1193" cy="381" r="4" fill="#639922" opacity="0.8"/>
+                    <rect x="1162" y="404" width="166" height="6" rx="3" fill="#61A4FF" opacity="0.35"/>
+                    <rect x="1162" y="418" width="120" height="6" rx="3" fill="#61A4FF" opacity="0.22"/>
+                    <rect x="1162" y="432" width="144" height="6" rx="3" fill="#61A4FF" opacity="0.18"/>
+                    <rect x="1162" y="462" width="80" height="18" rx="5" fill="#61A4FF" opacity="0.5"/>
+                </g>
+
+                <circle class="p1" cx="820" cy="80" r="3" fill="#61A4FF" opacity="0.5"/>
+                <circle class="p2" cx="780" cy="180" r="2" fill="#9FE1CB" opacity="0.4"/>
+                <circle class="p3" cx="1020" cy="480" r="3.5" fill="#315382" opacity="0.6"/>
+                <circle class="p1" cx="1380" cy="140" r="2.5" fill="#61A4FF" opacity="0.3"/>
+                <circle class="p2" cx="700" cy="420" r="1.5" fill="#9FE1CB" opacity="0.3"/>
+
+                <path d="M 1400 20 L 1420 20 L 1420 44" fill="none" stroke="#61A4FF" stroke-width="2"
+                      stroke-linecap="round" opacity="0.25"/>
+                <path d="M 20 556 L 20 576 L 44 576" fill="none" stroke="#315382" stroke-width="2"
+                      stroke-linecap="round" opacity="0.25"/>
+            </svg>
+        </div>
         <div class="hero_content">
             <div class="hero_desc" itemprop="text">
                 <span class="hero_budget">Професионални уеб решения</span>
-                <h1 class="hero_title" itemprop="headline">Изграждаме <span class="hero_title_second">иновативни</span>
-                    уеб решения</h1>
-                <p class="hero_sub_title" itemprop="description">София Софт е водеща софтуерна компания, специализирана
-                    в разработка на уеб
-                    приложения.</p>
-                <button class="hero_button_more" type="button">Научете повече</button>
+                <h1 class="hero_title" itemprop="headline">
+                    Изграждаме <span class="hero_title_second">иновативни</span> уеб решения
+                </h1>
+                <p class="hero_sub_title" itemprop="description">
+                    София Софт е водеща софтуерна компания, специализирана в разработка на уеб приложения.
+                </p>
+                <button class="hero_button_more" type="button" aria-label="Научете повече за нашите услуги">
+                    Научете повече
+                </button>
             </div>
-
-            <img
-                    src="images/hero_img.ss26.svg"
-                    alt="Примери за уеб проекти на София Софт"
-                    fetchpriority="high"
-                    class="hero_img">
         </div>
-
     </section>
-    <section id="services" itemscope itemtype="https://schema.org/Service">
-        <span class="service_budget">
-            Нашите Услуги
-        </span>
+
+    <section id="services" itemscope itemtype="https://schema.org/Service" aria-labelledby="services-title">
+        <span class="service_budget" aria-hidden="true">Нашите Услуги</span>
         <div class="service_title_content">
-            <h2 class="service_title" itemprop="name">
+            <h2 class="service_title" id="services-title" itemprop="name">
                 Какво предлагаме
             </h2>
             <p class="service_sub_tite" itemprop="description">
@@ -118,11 +197,13 @@
             </p>
         </div>
         <div class="services_boxes">
-            <div class=" web_dev" itemscope itemtype="https://schema.org/Service">
+            <div class="web_dev" itemscope itemtype="https://schema.org/Service">
                 <img
                         src="images/web_dev_icon.ss26.svg"
-                        alt="Web Development и SEO оптимизация"
-                        fetchpriority="high"
+                        alt="Web Development икона"
+                        loading="lazy"
+                        width="138"
+                        height="106"
                         class="service_icons"
                         itemprop="image">
                 <h3 itemprop="name">Web Development</h3>
@@ -132,20 +213,23 @@
             <div class="web_app" itemscope itemtype="https://schema.org/Service">
                 <img
                         src="images/web_app_icon.ss26.svg"
-                        alt="Custom Web Applications"
-                        fetchpriority="high"
+                        alt="Web Applications икона"
+                        loading="lazy"
+                        width="138"
+                        height="107"
                         class="service_icons"
                         itemprop="image">
                 <h3 itemprop="name">Web Applications</h3>
                 <p itemprop="description">Custom web applications и SaaS решения, оптимизирани за производителност и
-                    потребителско
-                    изживяване.</p>
+                    потребителско изживяване.</p>
             </div>
             <div class="web_custom" itemscope itemtype="https://schema.org/Service">
                 <img
                         src="images/web_custom_img.ss26.svg"
-                        alt="Custom уеб решения за бизнес"
-                        fetchpriority="high"
+                        alt="Custom Web Solutions икона"
+                        loading="lazy"
+                        width="138"
+                        height="107"
                         class="service_icons"
                         itemprop="image">
                 <h3 itemprop="name">Custom Web Solutions</h3>
@@ -155,8 +239,10 @@
             <div class="web_deign" itemscope itemtype="https://schema.org/Service">
                 <img
                         src="images/web_design_icon.ss26.svg"
-                        alt="UI/UX дизайн за оптимално потребителско изживяване"
-                        fetchpriority="high"
+                        alt="UI/UX Design икона"
+                        loading="lazy"
+                        width="138"
+                        height="89"
                         class="service_icons"
                         itemprop="image">
                 <h3 itemprop="name">UI/UX Design</h3>
@@ -165,90 +251,76 @@
             </div>
         </div>
     </section>
-    <section id="about_us" itemscope itemtype="https://schema.org/Organization">
-        <img class="about_us_icon"
-             src="images/about_us_icon.ss26.svg"
-             alt="Екип София Софт"
-             itemprop="logo"
-             fetchpriority="high"
-        />
 
-        <div class="about_us_rigth_side">
-            <span class="about_us_budget">
-                За нас
-            </span>
+    <section id="about_us" itemscope itemtype="https://schema.org/Organization" aria-labelledby="about-title">
+        <img
+                class="about_us_icon"
+                src="images/about_us_icon.ss26.svg"
+                alt="Екип на София Софт — три фигури"
+                loading="lazy"
+                width="480"
+                height="380"
+                itemprop="logo">
+
+        <div class="about_us_right_side">
+            <span class="about_us_budget" aria-hidden="true">За нас</span>
 
             <div class="about_us_title_content">
-                <h2 class="about_us_title" itemprop="name">
-                    Защо да изберете <br/><span class="about_us_sub_title">София Софт</span>
+                <h2 class="about_us_title" id="about-title" itemprop="name">
+                    Защо да изберете <span class="about_us_sub_title">София Софт</span>
                 </h2>
                 <p itemprop="description">
                     Ние сме екип от позитивни специалисти, които обичат да създават дигитални продукти. Съчетаваме
                     технологична експертиза с бизнес разбиране, за да доставяме решения, които не само работят
-                    перфектно, но
-                    и генерират реална стойност.
+                    перфектно, но и генерират реална стойност.
                 </p>
                 <p>
                     Вярваме в дългосрочни партньорства и прозрачна комуникация на всеки етап от проекта.
                 </p>
             </div>
             <div class="about_us_lists">
-                <ul class="about_us_list">
-                    <li><img
-                            src="images/check_icon.ss26.svg"
-                            alt="Реални решения"
-                            fetchpriority="high"
-                            class="check">
+                <ul class="about_us_list" role="list">
+                    <li>
+                        <img src="images/check_icon.ss26.svg" alt="" loading="lazy" width="24" height="24" class="check"
+                             aria-hidden="true">
                         Реални решения, не просто код
                     </li>
-                    <li><img
-                            src="images/check_icon.ss26.svg"
-                            alt="Ясна комуникация"
-                            fetchpriority="high"
-                            class="check">
-                        Ясна комуникация без „технически мъгли“
+                    <li>
+                        <img src="images/check_icon.ss26.svg" alt="" loading="lazy" width="24" height="24" class="check"
+                             aria-hidden="true">
+                        Ясна комуникация без „технически мъгли"
                     </li>
-                    <li><img
-                            src="images/check_icon.ss26.svg"
-                            alt="UX focus"
-                            fetchpriority="high"
-                            class="check">
+                    <li>
+                        <img src="images/check_icon.ss26.svg" alt="" loading="lazy" width="24" height="24" class="check"
+                             aria-hidden="true">
                         Фокус върху бързина, стабилност и UX
                     </li>
                 </ul>
-                <ul class="about_us_list">
-                    <li><img
-                            src="images/check_icon.ss26.svg"
-                            alt="Модерни технологии"
-                            fetchpriority="high"
-                            class="check">
+                <ul class="about_us_list" role="list">
+                    <li>
+                        <img src="images/check_icon.ss26.svg" alt="" loading="lazy" width="24" height="24" class="check"
+                             aria-hidden="true">
                         Модерни технологии, използвани разумно
                     </li>
-                    <li><img
-                            src="images/check_icon.ss26.svg"
-                            alt="Гъвкав процес"
-                            fetchpriority="high"
-                            class="check">
+                    <li>
+                        <img src="images/check_icon.ss26.svg" alt="" loading="lazy" width="24" height="24" class="check"
+                             aria-hidden="true">
                         Гъвкав процес, съобразен с твоя бизнес
                     </li>
-                    <li><img
-                            src="images/check_icon.ss26.svg"
-                            alt="Поддръжка"
-                            fetchpriority="high"
-                            class="check">
+                    <li>
+                        <img src="images/check_icon.ss26.svg" alt="" loading="lazy" width="24" height="24" class="check"
+                             aria-hidden="true">
                         Поддръжка и партньорство, не изчезваме след launch
                     </li>
                 </ul>
             </div>
         </div>
     </section>
-    <section id="how_work" itemscope itemtype="https://schema.org/HowTo">
-       <span class="how_work_budget">
-                    Нашият Процес
-       </span>
-        <div class="how_work_title_content">
 
-            <h2 class="how_work_title" itemprop="name">
+    <section id="how_work" itemscope itemtype="https://schema.org/HowTo" aria-labelledby="howwork-title">
+        <span class="how_work_budget" aria-hidden="true">Нашият Процес</span>
+        <div class="how_work_title_content">
+            <h2 class="how_work_title" id="howwork-title" itemprop="name">
                 Как работим
             </h2>
             <p class="how_work_sub_tite" itemprop="description">
@@ -257,53 +329,60 @@
         </div>
         <div class="how_work_boxes">
             <div class="analyze" itemscope itemtype="https://schema.org/HowToStep">
-                <span class="indicator">1</span>
+                <span class="indicator" aria-hidden="true">1</span>
                 <img
                         src="images/analyze_icon.ss26.svg"
-                        alt="Консултация и анализ"
-                        fetchpriority="high"
+                        alt="Иконa — консултация и анализ"
+                        loading="lazy"
+                        width="120"
+                        height="101"
                         class="how_work_icons">
                 <h3 itemprop="name">Консултация и Анализ</h3>
                 <p itemprop="text">Разбираме вашите цели, анализираме нуждите и дефинираме обхвата на проекта.</p>
             </div>
             <div class="design" itemscope itemtype="https://schema.org/HowToStep">
-                <span class="indicator">2</span>
+                <span class="indicator" aria-hidden="true">2</span>
                 <img
                         src="images/design_icon.ss26.svg"
-                        alt="Дизайн и планиране"
-                        fetchpriority="high"
+                        alt="Икона — дизайн и планиране"
+                        loading="lazy"
+                        width="120"
+                        height="105"
                         class="how_work_icons">
                 <h3 itemprop="name">Дизайн и Планиране</h3>
                 <p itemprop="text">Създаваме дизайн концепция, UX/UI wireframes и детайлен план за изпълнение.</p>
             </div>
             <div class="developmant" itemscope itemtype="https://schema.org/HowToStep">
-                <span class="indicator">3</span>
+                <span class="indicator" aria-hidden="true">3</span>
                 <img
                         src="images/coding_icon.ss26.svg"
-                        alt="Разработка на проекта"
-                        fetchpriority="high"
+                        alt="Икона — разработка"
+                        loading="lazy"
+                        width="120"
+                        height="86"
                         class="how_work_icons">
                 <h3 itemprop="name">Разработка</h3>
                 <p itemprop="text">Имплементираме решението с clean code, best practices и съвременни технологии.</p>
             </div>
             <div class="final" itemscope itemtype="https://schema.org/HowToStep">
-                <span class="indicator">4</span>
+                <span class="indicator" aria-hidden="true">4</span>
                 <img
                         src="images/final_icon.ss26.svg"
-                        alt="Тестване и пускане"
-                        fetchpriority="high"
+                        alt="Икона — тестване и пускане"
+                        loading="lazy"
+                        width="120"
+                        height="86"
                         class="how_work_icons">
                 <h3 itemprop="name">Тестване и Пускане</h3>
-                <p itemprop="text">Tестване, оптимизация, deployment и follow-up поддръжка.</p>
+                <p itemprop="text">Тестване, оптимизация, deployment и follow-up поддръжка.</p>
             </div>
         </div>
     </section>
-    <section id="contact" itemscope itemtype="https://schema.org/ContactPage">
-           <span class="contact_budget">
-                Контакти
-            </span>
+
+    <section id="contact" itemscope itemtype="https://schema.org/ContactPage" aria-labelledby="contact-title">
+        <span class="contact_budget" aria-hidden="true">Започнете вашия проект днес</span>
         <div class="contact_title_content">
-            <h2 class="contact_title" itemprop="name">
+            <h2 class="contact_title" id="contact-title" itemprop="name">
                 Започнете вашия проект днес
             </h2>
             <p class="how_work_sub_title" itemprop="description">
@@ -313,52 +392,135 @@
         <div class="contact_boxes">
             <div class="contact_form">
                 <h3>Контактна форма</h3>
-                <div class="form">
-                    <p>Скоро...</p>
-                </div>
+                <form class="form" id="contactForm" novalidate>
+
+                    <div class="form_group">
+                        <label for="name">Име и фамилия</label>
+                        <input
+                                type="text"
+                                id="name"
+                                name="name"
+                                placeholder="Иван Иванов"
+                                required
+                                autocomplete="name">
+                    </div>
+
+                    <div class="form_group">
+                        <label for="email">Имейл адрес</label>
+                        <input
+                                type="email"
+                                id="email"
+                                name="email"
+                                placeholder="ivan@example.com"
+                                required
+                                autocomplete="email">
+                    </div>
+
+                    <div class="form_group">
+                        <label for="phone">Телефон <span class="optional">(незадължително)</span></label>
+                        <input
+                                type="tel"
+                                id="phone"
+                                name="phone"
+                                placeholder="+359 888 123 456"
+                                autocomplete="tel">
+                    </div>
+
+                    <div class="form_group">
+                        <label for="service">Услуга</label>
+                        <select id="service" name="service" required>
+                            <option value="" disabled selected>Изберете услуга...</option>
+                            <option value="web_dev">Web Development</option>
+                            <option value="web_app">Web Application</option>
+                            <option value="custom">Custom Web Solution</option>
+                            <option value="design">UI/UX Design</option>
+                            <option value="other">Друго</option>
+                        </select>
+                    </div>
+
+                    <div class="form_group">
+                        <label for="message">Съобщение</label>
+                        <textarea
+                                id="message"
+                                name="message"
+                                placeholder="Разкажете ни за вашия проект..."
+                                rows="4"
+                                required></textarea>
+                    </div>
+
+                    <button type="submit" class="form_submit">
+                        <span class="form_submit_text">Изпрати заявка</span>
+                        <svg class="form_submit_icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="22" y1="2" x2="11" y2="13"></line>
+                            <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                        </svg>
+                    </button>
+
+                    <div class="form_success" id="formSuccess" aria-live="polite">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                            <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                        </svg>
+                        <p>Благодарим! Ще се свържем с вас скоро.</p>
+                    </div>
+
+                </form>
             </div>
             <div class="contact_box_info">
                 <div>
-                    <h3>Информация за контакт</h3>
-                    <ul class="contact_list">
+                    <h3>Контакти</h3>
+                    <ul class="contact_list" role="list">
                         <li>
                             <img
                                     src="images/mail_icon.ss26.svg"
-                                    alt="Email София Софт"
-                                    fetchpriority="high"
-                                    class="contact_icons">
+                                    alt=""
+                                    loading="lazy"
+                                    width="30"
+                                    height="30"
+                                    class="contact_icons"
+                                    aria-hidden="true">
                             <div>
-                                <span>
-                                    Email
-                                </span>
-                                <a href="mailto:contact.sofiasoft@gmail.com">contact.sofiasoft@gmail.com</a>
+                                <span>Email</span>
+                                <a href="mailto:contact.sofiasoft@gmail.com"
+                                   aria-label="Изпратете имейл до contact.sofiasoft@gmail.com">
+                                    contact.sofiasoft@gmail.com
+                                </a>
                             </div>
                         </li>
                         <li>
                             <img
                                     src="images/phone_icon.ss26.svg"
-                                    alt="Телефон София Софт"
-                                    fetchpriority="high"
-                                    class="contact_icons">
+                                    alt=""
+                                    loading="lazy"
+                                    width="30"
+                                    height="30"
+                                    class="contact_icons"
+                                    aria-hidden="true">
                             <div>
-                                <span>
-                                    Телефон
-                                </span>
-                                <a href="tel:+359896436858">+359 896 436 858</a>
+                                <span>Телефон</span>
+                                <a href="tel:+359896436858"
+                                   aria-label="Обадете се на +359 896 436 858">
+                                    +359 896 436 858
+                                </a>
                             </div>
                         </li>
                         <li>
                             <img
                                     src="images/facebook.ss26.svg"
-                                    alt="Facebook София Софт"
-                                    fetchpriority="high"
-                                    class="contact_icons">
+                                    alt=""
+                                    loading="lazy"
+                                    width="30"
+                                    height="30"
+                                    class="contact_icons"
+                                    aria-hidden="true">
                             <div>
-                                <span>
-                                    Facebook
-                                </span>
-                                <a href="https://www.facebook.com/people/%D0%A1%D0%BE%D1%84%D0%B8%D1%8F-%D0%A1%D0%BE%D1%84%D1%82/61556791982620/">София
-                                    Софт</a>
+                                <span>Facebook</span>
+                                <a href="https://www.facebook.com/people/%D0%A1%D0%BE%D1%84%D0%B8%D1%8F-%D0%A1%D0%BE%D1%84%D1%82/61556791982620/"
+                                   target="_blank"
+                                   rel="noopener noreferrer"
+                                   aria-label="Посетете страницата на София Софт във Facebook (отваря нов прозорец)">
+                                    София Софт
+                                </a>
                             </div>
                         </li>
                     </ul>
@@ -366,33 +528,112 @@
                 <div>
                     <img
                             src="images/contact_icon.ss26.svg"
-                            alt="Контакт София Софт"
-                            fetchpriority="high"
+                            alt="Илюстрация — свържете се с нас"
+                            loading="lazy"
+                            width="290"
+                            height="205"
                             class="contact_icon">
                 </div>
             </div>
         </div>
     </section>
+
 </main>
-<footer>
-    <img
-            src="images/logo.ss26.svg"
 
+<footer role="contentinfo">
+    <div class="footer_info">
+        <div class="footer_section">
+            <h3 class="footer_heading">Навигация</h3>
+            <ul class="footer_nav" role="list">
+                <li><a href="#hero">Начало</a></li>
+                <li><a href="#services">Услуги</a></li>
+                <li><a href="#about_us">За нас</a></li>
+                <li><a href="#how_work">Как работим</a></li>
+            </ul>
+        </div>
 
-            alt="logo"
-            fetchpriority="high"
-            class="logo">
+        <div class="footer_section">
+            <h3 class="footer_heading">Контакти</h3>
+            <ul class="footer_contact_list" role="list">
+                <li>
+                    <img src="images/mail_icon.ss26.svg" alt="" loading="lazy" width="30" height="30"
+                         class="footer_icon"
+                         aria-hidden="true">
+                    <a href="mailto:contact.sofiasoft@gmail.com">contact.sofiasoft@gmail.com</a>
+                </li>
+                <li>
+                    <img src="images/phone_icon.ss26.svg" alt="" loading="lazy" width="30" height="30"
+                         class="footer_icon"
+                         aria-hidden="true">
+                    <a href="tel:+359896436858">+359 896 436 858</a>
+                </li>
+            </ul>
+        </div>
 
-    <span>
-            © 2026 София Софт. Всички права запазени.
-        </span>
+        <div class="footer_section">
+            <h3 class="footer_heading">Локация</h3>
+            <div class="footer_location_box">
+                <div class="footer_location">
+                    <img src="images/adress.svg" alt="" loading="lazy" width="30" height="30"
+                         class="footer_icon"
+                         aria-hidden="true">
+                    <span>София, България</span>
+                </div>
+                <button class="footer_cta" type="button" aria-label="Заявете услуга">
+                    Заявка на услугас
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer_bottom">
+        <img src="images/footer_logo.svg" alt="София Софт лого" loading="lazy" width="247" height="213"
+             class="footer_logo">
+        <span class="footer_copy">© 2026 София Софт. Всички права са запазени.</span>
+    </div>
 </footer>
-<span class="scroll_up"><img
-        src="images/up.ss26.svg"
-        alt="up"
-        fetchpriority="high"
-        data-nosnippet
-        class="up"></span>
+
+<a href="#hero"
+   class="scroll_up"
+   aria-label="Върнете се в началото на страницата"
+   role="button">
+    <img
+            src="images/up.ss26.svg"
+            alt=""
+            width="40"
+            height="40"
+            data-nosnippet
+            aria-hidden="true"
+            class="up">
+</a>
+
+<script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "София Софт",
+        "url": "https://sofia-soft.github.io/",
+        "logo": "https://sofia-soft.github.io/images/logo.png",
+        "description": "София Софт предлага професионални уеб решения, custom приложения и UI/UX дизайн за растеж на вашия бизнес.",
+        "email": "contact.sofiasoft@gmail.com",
+        "telephone": "+359896436858",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "София",
+            "addressCountry": "BG"
+        },
+        "sameAs": [
+            "https://www.facebook.com/people/%D0%A1%D0%BE%D1%84%D0%B8%D1%8F-%D0%A1%D0%BE%D1%84%D1%82/61556791982620/"
+        ],
+        "serviceType": [
+            "Web Development",
+            "Web Applications",
+            "Custom Web Solutions",
+            "UI/UX Design"
+        ]
+    }
+</script>
+
 <script src="js/javascript.ss26.js" defer></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-JJWTBVCPJV"></script>
 <script>
@@ -403,8 +644,8 @@
     }
 
     gtag('js', new Date());
-
     gtag('config', 'G-JJWTBVCPJV');
 </script>
+
 </body>
 </html>
