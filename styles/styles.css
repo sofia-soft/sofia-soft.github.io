@@ -1403,11 +1403,6 @@ footer {
         justify-content: center;
     }
 
-    #about_us {
-        flex-direction: column-reverse;
-
-    }
-
 
     .about_us_title {
         text-align: left;
@@ -1823,7 +1818,7 @@ footer {
     }
 }
 
-@media (min-width: 1900px) {
+@media (min-width: 1800px) {
     .block2,
     .block4 {
         display: block;
@@ -1836,6 +1831,10 @@ footer {
 
     #about_us {
         flex-direction: row;
+    }
+
+    .about_us_right_side {
+        align-items: start;
     }
 
     .contact_title, .how_work_title, .service_title {
