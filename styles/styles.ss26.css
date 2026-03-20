@@ -612,8 +612,9 @@ nav > .nav_list li:last-child {
 */
 .service_icons {
     width: 138px;
-    height: auto;
+    height: 106px;
     object-fit: contain;
+    aspect-ratio: 138/106;
     transition: transform 0.25s ease;
 }
 
@@ -841,8 +842,9 @@ nav > .nav_list li:last-child {
 */
 .how_work_icons {
     width: 120px;
-    height: auto;
+    height: 101px;
     object-fit: contain;
+    aspect-ratio: 120/101;
     transition: transform 0.25s ease;
 }
 
@@ -1434,6 +1436,7 @@ footer {
         padding: 12px 6px;
         width: 218px;
         height: 44px;
+        flex-shrink: 0;
         background-color: var(--malibu);
         color: #0d1b2e;
         border: 1px solid var(--malibu);
