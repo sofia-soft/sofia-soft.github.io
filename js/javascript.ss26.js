@@ -1,6 +1,7 @@
 'use strict';
 
 document.addEventListener('DOMContentLoaded', () => {
+    document.body.classList.add('ready');
 
     const header = document.querySelector('.header');
     const burger = document.querySelector('.burger');
