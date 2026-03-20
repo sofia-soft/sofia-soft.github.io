@@ -1353,10 +1353,10 @@ footer {
     width: 222px;
     height: 44px;
     padding: 12px 6px;
-    background-color: var(--malibu);
-    border: 1px solid var(--malibu);
+    background-color: #1a5fad;
+    color: #ffffff;
+    border: 1px solid #1a5fad;
     border-radius: 5px;
-    color: var(--athens-gray);
     font-family: 'Montserrat', sans-serif;
     font-size: 20px;
     font-weight: 500;
@@ -1366,8 +1366,8 @@ footer {
 }
 
 .footer_cta:hover {
-    background-color: #4a8fe8;
-    box-shadow: 0 4px 12px rgba(97, 164, 255, 0.4);
+    background-color: #1550a0;
+    box-shadow: 0 4px 12px rgba(26, 95, 173, 0.4);
 }
 
 /*
@@ -1435,9 +1435,9 @@ footer {
         width: 218px;
         height: 44px;
         background-color: var(--malibu);
+        color: #0d1b2e;
         border: 1px solid var(--malibu);
         border-radius: 5px;
-        color: var(--athens-gray);
         font-family: 'Montserrat', sans-serif;
         font-size: 20px;
         font-weight: 500;
@@ -1447,7 +1447,8 @@ footer {
     }
 
     .header > .contact:hover {
-        background-color: var(--big-stone);
+        background-color: #4a8fe8;
+        color: #ffffff;
         box-shadow: 4px 3px 4px rgba(19, 33, 51, 0.2);
     }
 
