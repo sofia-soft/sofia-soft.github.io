@@ -1225,7 +1225,7 @@ footer {
 .footer_contact_list {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     gap: 25px;
     padding: 0;
     list-style: none;
@@ -1803,7 +1803,7 @@ footer {
     #about_us {
         padding: 120px;
         gap: 80px;
-        /*flex-direction: row;*/
+        flex-direction: column-reverse;
     }
 
     /*.about_us_title {*/
@@ -1857,5 +1857,9 @@ footer {
 
     .services_boxes > div, .how_work_boxes > div {
         height: 400px;
+    }
+
+    .footer_contact_list {
+        align-items: start;
     }
 }
