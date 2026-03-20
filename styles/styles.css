@@ -916,29 +916,29 @@ nav > .nav_list li a.active {
     padding: 0;
 }
 
-.form_group {
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-    width: 100%;
-}
+/*.form_group {*/
+/*    display: flex;*/
+/*    flex-direction: column;*/
+/*    gap: 6px;*/
+/*    width: 100%;*/
+/*}*/
 
-.form_group label {
+.form label {
     font-size: 13px;
     font-weight: 600;
     color: var(--big-stone);
     letter-spacing: .01em;
 }
 
-.form_group .optional {
+.form .optional {
     font-weight: 400;
     color: var(--chambray);
     font-size: 11px;
 }
 
-.form_group input,
-.form_group select,
-.form_group textarea {
+.form input,
+.form select,
+.form textarea {
     width: 100%;
     background: var(--white);
     border: 1.5px solid var(--porcelain);
@@ -954,33 +954,33 @@ nav > .nav_list li a.active {
     -webkit-appearance: none;
 }
 
-.form_group input::placeholder,
-.form_group textarea::placeholder {
+.form input::placeholder,
+.form textarea::placeholder {
     color: #b0b7c3;
     font-weight: 400;
 }
 
-.form_group input:focus,
-.form_group select:focus,
-.form_group textarea:focus {
+.form input:focus,
+.form select:focus,
+.form textarea:focus {
     border-color: var(--malibu);
     box-shadow: 0 0 0 3px rgba(97, 164, 255, 0.12);
 }
 
-.form_group input.error,
-.form_group select.error,
-.form_group textarea.error {
+.form input.error,
+.form select.error,
+.form textarea.error {
     border-color: #E24B4A;
     box-shadow: 0 0 0 3px rgba(226, 75, 74, 0.1);
 }
 
-.form_group textarea {
+.form textarea {
     resize: vertical;
     min-height: 100px;
     line-height: 1.6;
 }
 
-.form_group select {
+.form select {
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23315382' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
     background-repeat: no-repeat;
     background-position: right 12px center;

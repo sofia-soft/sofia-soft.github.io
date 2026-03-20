@@ -390,70 +390,62 @@
                 <h3>Контактна форма</h3>
                 <form class="form" id="contactForm" novalidate>
 
-                    <div class="form_group">
-                        <label for="name">Име и фамилия</label>
-                        <input
-                                type="text"
-                                id="name"
-                                name="name"
-                                placeholder="Иван Иванов"
-                                required
-                                autocomplete="name">
-                    </div>
+                    <label for="name">Име и фамилия</label>
+                    <input
+                            type="text"
+                            id="name"
+                            name="name"
+                            placeholder="Иван Иванов"
+                            required
+                            autocomplete="name">
 
-                    <div class="form_group">
-                        <label for="email">Имейл адрес</label>
-                        <input
-                                type="email"
-                                id="email"
-                                name="email"
-                                placeholder="ivan@example.com"
-                                required
-                                autocomplete="email">
-                    </div>
+                    <label for="email">Имейл адрес</label>
+                    <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            placeholder="ivan@example.com"
+                            required
+                            autocomplete="email">
 
-                    <div class="form_group">
-                        <label for="phone">Телефон <span class="optional">(незадължително)</span></label>
-                        <input
-                                type="tel"
-                                id="phone"
-                                name="phone"
-                                placeholder="+359 888 123 456"
-                                autocomplete="tel">
-                    </div>
+                    <label for="phone">Телефон <span class="optional">(незадължително)</span></label>
+                    <input
+                            type="tel"
+                            id="phone"
+                            name="phone"
+                            placeholder="+359 888 123 456"
+                            autocomplete="tel">
 
-                    <div class="form_group">
-                        <label for="service">Услуга</label>
-                        <select id="service" name="service" required>
-                            <option value="" disabled selected>Изберете услуга...</option>
-                            <option value="web_dev">Web Development</option>
-                            <option value="web_app">Web Application</option>
-                            <option value="custom">Custom Web Solution</option>
-                            <option value="design">UI/UX Design</option>
-                            <option value="other">Друго</option>
-                        </select>
-                    </div>
+                    <label for="service">Услуга</label>
+                    <select id="service" name="service" required>
+                        <option value="" disabled selected>Изберете услуга...</option>
+                        <option value="web_dev">Web Development</option>
+                        <option value="web_app">Web Application</option>
+                        <option value="custom">Custom Web Solution</option>
+                        <option value="design">UI/UX Design</option>
+                        <option value="other">Друго</option>
+                    </select>
 
-                    <div class="form_group">
-                        <label for="message">Съобщение</label>
-                        <textarea
-                                id="message"
-                                name="message"
-                                placeholder="Разкажете ни за вашия проект..."
-                                rows="4"
-                                required></textarea>
-                    </div>
+                    <label for="message">Съобщение</label>
+                    <textarea
+                            id="message"
+                            name="message"
+                            placeholder="Разкажете ни за вашия проект..."
+                            rows="4"
+                            required></textarea>
 
                     <button type="submit" class="form_submit">
                         <span class="form_submit_text">Изпрати заявка</span>
-                        <svg class="form_submit_icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <svg class="form_submit_icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <line x1="22" y1="2" x2="11" y2="13"></line>
                             <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
                         </svg>
                     </button>
 
                     <div class="form_success" id="formSuccess" aria-live="polite">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                             stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
                             <polyline points="22 4 12 14.01 9 11.01"></polyline>
                         </svg>

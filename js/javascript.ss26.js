@@ -137,7 +137,7 @@ setActiveLink();
 document.getElementById('contactForm').addEventListener('submit', function (e) {
     e.preventDefault();
 
-    const form = this;
+    const form = e.target;
     const btn = form.querySelector('.form_submit');
     const success = document.getElementById('formSuccess');
 
@@ -151,6 +151,9 @@ document.getElementById('contactForm').addEventListener('submit', function (e) {
     });
 
     if (!valid) return;
+    const formData = new FormData(form);
+
+    const data = Object.fromEntries(formData.entries());
 
     btn.classList.add('loading');
     btn.querySelector('.form_submit_text').textContent = 'Изпращане...';
