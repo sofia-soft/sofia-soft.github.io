@@ -60,7 +60,7 @@ html {
 }
 
 body {
-    font-family: 'Montserrat', system-ui, sans-serif;
+    font-family: 'Montserrat', sans-serif;
     color: var(--big-stone);
     min-height: 100vh;
     display: flex;
@@ -561,7 +561,6 @@ nav > .nav_list li:last-child {
     line-height: 24px;
     text-align: center;
     color: var(--athens-gray);
-    max-width: 308px;
 }
 
 .hero_button_more {
@@ -628,7 +627,7 @@ nav > .nav_list li:last-child {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 16px;
+    gap: 35px;
     width: 100%;
 }
 
@@ -686,6 +685,8 @@ nav > .nav_list li:last-child {
     transform .6s cubic-bezier(.34, 1.56, .64, 1),
     border-color .3s,
     box-shadow .35s;
+    justify-content: center;
+    gap: 20px
 }
 
 .services_boxes > div.visible {
@@ -772,7 +773,7 @@ nav > .nav_list li:last-child {
     flex-direction: column;
     align-items: center;
     gap: 12px;
-    padding: 0 22px;
+    padding: 0 15px 30px 15px;
     width: 100%;
 }
 
@@ -1026,7 +1027,7 @@ nav > .nav_list li:last-child {
 .about_us_title_content {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 35px;
 }
 
 .about_us_title {
@@ -1122,7 +1123,7 @@ nav > .nav_list li:last-child {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 16px;
+    gap: 35px;
 }
 
 .how_work_title {
@@ -1175,6 +1176,8 @@ nav > .nav_list li:last-child {
     transform .6s cubic-bezier(.34, 1.56, .64, 1),
     border-color .3s,
     box-shadow .35s;
+    justify-content: center;
+    gap: 20px
 }
 
 .how_work_boxes > div.visible {
@@ -1731,7 +1734,7 @@ nav > .nav_list li:last-child {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 18px;
+    gap: 30px;
 }
 
 .contact_form h3 {
@@ -1820,11 +1823,11 @@ nav > .nav_list li:last-child {
     width: 100%;
     height: 48px;
     background: var(--malibu);
+    font-family: 'Montserrat', sans-serif;
     border: none;
     border-radius: 12px;
     color: var(--white);
-    font-family: 'Montserrat', system-ui, sans-serif;
-    font-size: 15px;
+    font-size: 20px;
     font-weight: 700;
     cursor: pointer;
     display: flex;
@@ -1850,8 +1853,8 @@ nav > .nav_list li:last-child {
 }
 
 .form_submit_icon {
-    width: 16px;
-    height: 16px;
+    width: 20px;
+    height: 20px;
     flex-shrink: 0;
 }
 
@@ -1908,6 +1911,7 @@ nav > .nav_list li:last-child {
     line-height: 24px;
     color: var(--big-stone);
     margin-bottom: 30px;
+    text-align: center;
 }
 
 .contact_icon {
@@ -2085,7 +2089,7 @@ footer {
     width: 222px;
     height: 44px;
     padding: 12px 6px;
-    background-color: #1a5fad;
+    background-color: var(--malibu);
     color: #ffffff;
     border: 1px solid #1a5fad;
     border-radius: 5px;
@@ -2352,10 +2356,12 @@ footer {
     }
 
     .hero_sub_title {
-
         max-width: 600px;
     }
 
+    .hero_sub_title {
+        max-width: unset;
+    }
     .hero_img {
         display: block;
         width: 700px;
@@ -2497,7 +2503,7 @@ footer {
         gap: 50px;
     }
 
-    .contact_box_info > div {
+    about_us_title_content {
         width: 100%;
         padding: 48px 30px 46px;
     }
@@ -2590,6 +2596,7 @@ footer {
     }
 
     .hero_title {
+        text-align: center;
         font-size: 3.6rem;
     }
 
@@ -2627,6 +2634,10 @@ footer {
    EXTRA LARGE — min-width: 1800px
 ══════════════════════════════════════════════ */
 @media (min-width: 1800px) {
+
+    .hero_sub_title {
+        max-width: unset;
+    }
 
     .about_us_rigth_side {
         align-items: start;
