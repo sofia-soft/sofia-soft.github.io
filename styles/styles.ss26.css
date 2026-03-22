@@ -260,6 +260,32 @@ section canvas {
     height .5s cubic-bezier(.4, 0, .2, 1);
 }
 
+.hero_desc > .contact{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 6px;
+    width: 218px;
+    height: 44px;
+    flex-shrink: 0;
+    background-color: var(--malibu);
+    color: #0d1b2e;
+    border: 1px solid var(--malibu);
+    border-radius: 5px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 24px;
+    cursor: pointer;
+    transition: background 0.2s, box-shadow 0.2s;
+}
+
+.hero_desc > .contact:hover{
+    background-color: #4a8fe8;
+    color: #ffffff;
+    box-shadow: 4px 3px 4px rgba(19, 33, 51, 0.2);
+}
+
 .logo {
     height: 55px;
     width: auto;
@@ -2124,8 +2150,7 @@ footer {
         line-height: 35px;
     }
 
-    .header > .contact,
-    .hero_desc > .contact{
+    .header > .contact {
         display: inline-flex;
         align-items: center;
         justify-content: center;
@@ -2145,8 +2170,7 @@ footer {
         transition: background 0.2s, box-shadow 0.2s;
     }
 
-    .header > .contact:hover,
-    .hero_desc > .contact:hover{
+    .header > .contact:hover{
         background-color: #4a8fe8;
         color: #ffffff;
         box-shadow: 4px 3px 4px rgba(19, 33, 51, 0.2);
