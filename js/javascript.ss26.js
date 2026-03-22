@@ -147,34 +147,50 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const contactForm = document.getElementById('contactForm');
     if (contactForm) {
-        contactForm.addEventListener('submit', function (e) {
-            e.preventDefault();
-            const btn = this.querySelector('.form_submit');
-            const success = document.getElementById('formSuccess');
+        contactForm.addEventListener('submit', async function (e) {
+            e.preventDefault()
 
-            let valid = true;
-            this.querySelectorAll('[required]').forEach(field => {
-                field.classList.remove('error');
-                if (!field.value.trim()) {
-                    field.classList.add('error');
-                    valid = false;
+            const btn = this.querySelector('.form_submit')
+            const btnText = this.querySelector('.form_submit_text')
+            const success = document.getElementById('formSuccess')
+
+            btn.disabled = true
+            btnText.textContent = 'Изпращане...'
+
+            const data = {
+                name: document.getElementById('name').value.trim(),
+                email: document.getElementById('email').value.trim(),
+                phone: document.getElementById('phone').value.trim(),
+                service: document.getElementById('service').value,
+                message: document.getElementById('message').value.trim()
+            }
+
+            try {
+                const res = await fetch('https://contact-form.myrobotch.workers.dev', {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify(data)
+                })
+
+                if (res.ok) {
+                    this.reset()
+                    success.style.display = 'flex'
+                    btnText.textContent = 'Изпрати заявка'
+                    btn.disabled = false
+                    setTimeout(() => {
+                        success.style.display = 'none'
+                    }, 5000)
+                } else {
+                    throw new Error('Грешка')
                 }
-            });
-            if (!valid) return;
-
-            btn.classList.add('loading');
-            btn.querySelector('.form_submit_text').textContent = 'Изпращане...';
-
-            setTimeout(() => {
-                btn.style.display = 'none';
-                success.classList.add('show');
-                this.querySelectorAll('input, select, textarea').forEach(f => f.disabled = true);
-            }, 1200);
-        });
-
-        contactForm.querySelectorAll('input, select, textarea').forEach(field => {
-            field.addEventListener('input', () => field.classList.remove('error'));
-        });
+            } catch {
+                btnText.textContent = 'Грешка — опитай отново'
+                btn.disabled = false
+                setTimeout(() => {
+                    btnText.textContent = 'Изпрати заявка'
+                }, 3000)
+            }
+        })
     }
 
     (function initHero() {
@@ -289,15 +305,140 @@ document.addEventListener('DOMContentLoaded', () => {
         }, {threshold, rootMargin});
     }
 
-    initStagger('.services_boxes', '.services_boxes > div', {
-        delay: 180, duration: 0.9, offsetY: 42, scale: 0.92,
-        threshold: 0.15, rootMargin: '0px 0px -80px 0px',
-    });
+    var isTouchDevice = function() { return window.matchMedia('(hover: none)').matches; };
 
-    initStagger('.how_work_boxes', '.how_work_boxes > div', {
-        delay: 170, duration: 0.85, offsetY: 34, scale: 0.94,
-        threshold: 0.12, rootMargin: '0px 0px -60px 0px',
-    });
+    var iconAnimMap = {
+        'web_dev': function(card) {
+            var lines = card.querySelectorAll('.code-l1, .code-l2, .code-l3');
+            lines.forEach(function(l) { l.style.strokeDashoffset = '40'; });
+            ['.code-l1', '.code-l2', '.code-l3'].forEach(function(sel, i) {
+                setTimeout(function() {
+                    card.querySelectorAll(sel).forEach(function(l) {
+                        l.style.transition = 'stroke-dashoffset .4s ease';
+                        l.style.strokeDashoffset = '0';
+                    });
+                }, i * 200);
+            });
+        },
+        'web_app': function(card) {
+            var panel = card.querySelector('.panel');
+            if (panel) panel.style.animation = 'slidePanel 1.8s ease-in-out 2';
+            ['status1','status2','status3'].forEach(function(cls, i) {
+                var el = card.querySelector('.' + cls);
+                if (el) el.style.animation = 'blinkDot 1s ' + (i * 0.3) + 's ease-in-out 3';
+            });
+        },
+        'web_custom': function(card) {
+            var conn = card.querySelector('.conn');
+            if (conn) { conn.style.transition = 'stroke-dashoffset .8s ease'; conn.style.strokeDashoffset = '0'; }
+            ['node2','node3','node4'].forEach(function(cls, i) {
+                var el = card.querySelector('.' + cls);
+                if (!el) return;
+                el.style.transform = 'scale(0)';
+                el.style.transformBox = 'fill-box';
+                el.style.transformOrigin = 'center';
+                setTimeout(function() {
+                    el.style.transition = 'transform .3s cubic-bezier(.34,1.56,.64,1)';
+                    el.style.transform = 'scale(1)';
+                }, 300 + i * 200);
+            });
+        },
+        'web_deign': function(card) {
+            var mg = card.querySelector('.mockup-group');
+            if (mg) mg.style.animation = 'floatUp 2s ease-in-out 2';
+        },
+        'analyze': function(card) {
+            var b1 = card.querySelector('.b1');
+            var b2 = card.querySelector('.b2');
+            if (b1) {
+                b1.style.transform = 'scale(0)'; b1.style.opacity = '0';
+                setTimeout(function() { b1.style.transition = 'transform .4s ease, opacity .4s ease'; b1.style.transform = 'scale(1)'; b1.style.opacity = '1'; }, 80);
+            }
+            if (b2) {
+                b2.style.transform = 'scale(0)'; b2.style.opacity = '0';
+                setTimeout(function() { b2.style.transition = 'transform .4s ease, opacity .4s ease'; b2.style.transform = 'scale(1)'; b2.style.opacity = '1'; }, 360);
+            }
+            ['dd1','dd2','dd3'].forEach(function(cls, i) {
+                var el = card.querySelector('.' + cls);
+                if (el) el.style.animation = 'dotDot 1.2s ' + (0.6 + i * 0.2) + 's ease-in-out 3';
+            });
+        },
+        'design': function(card) {
+            ['w1','w2','w3'].forEach(function(cls, i) {
+                var el = card.querySelector('.' + cls);
+                if (el) setTimeout(function() { el.style.transition = 'stroke-dashoffset .5s ease'; el.style.strokeDashoffset = '0'; }, 100 + i * 300);
+            });
+            var pencil = card.querySelector('.pencil');
+            if (pencil) pencil.style.animation = 'pencilMove 2.5s .2s ease-in-out 2';
+        },
+        'development': function(card) {
+            ['tl1','tl2','tl3','tl4'].forEach(function(cls, i) {
+                var el = card.querySelector('.' + cls);
+                if (!el) return;
+                el.style.transition = 'none';
+                el.style.strokeDasharray = '50';
+                el.style.strokeDashoffset = '50';
+                setTimeout(function() {
+                    el.style.transition = 'stroke-dashoffset .35s ease';
+                    el.style.strokeDashoffset = '0';
+                }, 50 + i * 250);
+            });
+            var cursor = card.querySelector('.term-cursor');
+            if (cursor) {
+                setTimeout(function() {
+                    cursor.style.animation = 'termBlink .8s step-end 6';
+                }, 1100);
+            }
+            var gear = card.querySelector('.mini-gear');
+            if (gear) {
+                gear.style.transformOrigin = '38px 12px';
+                gear.style.animation = 'gearSpin 2s linear 3';
+            }
+        },
+        'final': function(card) {
+            var rocket = card.querySelector('.rocket');
+            if (rocket) rocket.style.animation = 'rocketLift 1.4s ease-in-out 2';
+            var ring = card.querySelector('.launch-ring');
+            if (ring) ring.style.animation = 'ringExpand 1.6s ease-out 2';
+            var s1 = card.querySelector('.spark1');
+            var s2 = card.querySelector('.spark2');
+            if (s1) s1.style.animation = 'sparkle1 1s .1s ease-in-out 2';
+            if (s2) s2.style.animation = 'sparkle2 1s .4s ease-in-out 2';
+        }
+    };
+
+    function triggerIconAnim(card) {
+        var classes = Array.from(card.classList);
+        var match = classes.find(function(c) { return iconAnimMap[c]; });
+        if (match) iconAnimMap[match](card);
+    }
+
+    function initCardReveal(boxesSel, delayStep) {
+        var boxes = document.querySelector(boxesSel);
+        if (!boxes) return;
+        var cards = boxes.querySelectorAll(':scope > div');
+        if (!cards.length) return;
+
+        var obs = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
+                if (!entry.isIntersecting) return;
+                var card = entry.target;
+                var i = Array.from(cards).indexOf(card);
+                setTimeout(function() {
+                    card.classList.add('visible');
+                    if (isTouchDevice()) {
+                        setTimeout(function() { triggerIconAnim(card); }, 450);
+                    }
+                }, i * delayStep);
+                obs.unobserve(card);
+            });
+        }, {threshold: 0.1, rootMargin: '0px 0px -40px 0px'});
+
+        cards.forEach(function(card) { obs.observe(card); });
+    }
+
+    initCardReveal('.services_boxes', 180);
+    initCardReveal('.how_work_boxes', 170);
 
     const aboutSection = document.querySelector('#about_us');
     if (aboutSection) {
