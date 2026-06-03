@@ -2,6 +2,17 @@
 
 document.addEventListener('DOMContentLoaded', () => {
     document.body.classList.add('ready');
+    const CONSENT_KEY = "cookiesConsent";
+    let analyticsLoaded = false;
+    const cookies = localStorage.getItem(CONSENT_KEY);
+
+    if (!cookies) {
+        document.getElementById("cookie-consent-popup").style.display = "block";
+    }
+
+    if (cookies === "accepted") {
+        enableAnalytics();
+    }
 
     const header = document.querySelector('.header');
     const burger = document.querySelector('.burger');
@@ -102,7 +113,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     window.addEventListener('resize', updateHeader, {passive: true});
 
-    document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+    document.querySelectorAll('a[href^="/"]').forEach((anchor) => {
         anchor.addEventListener('click', (e) => {
             const id = anchor.getAttribute('href');
             if (id === '#') return;
@@ -305,87 +316,107 @@ document.addEventListener('DOMContentLoaded', () => {
         }, {threshold, rootMargin});
     }
 
-    var isTouchDevice = function() { return window.matchMedia('(hover: none)').matches; };
+    var isTouchDevice = function () {
+        return window.matchMedia('(hover: none)').matches;
+    };
 
     var iconAnimMap = {
-        'web_dev': function(card) {
+        'web_dev': function (card) {
             var lines = card.querySelectorAll('.code-l1, .code-l2, .code-l3');
-            lines.forEach(function(l) { l.style.strokeDashoffset = '40'; });
-            ['.code-l1', '.code-l2', '.code-l3'].forEach(function(sel, i) {
-                setTimeout(function() {
-                    card.querySelectorAll(sel).forEach(function(l) {
+            lines.forEach(function (l) {
+                l.style.strokeDashoffset = '40';
+            });
+            ['.code-l1', '.code-l2', '.code-l3'].forEach(function (sel, i) {
+                setTimeout(function () {
+                    card.querySelectorAll(sel).forEach(function (l) {
                         l.style.transition = 'stroke-dashoffset .4s ease';
                         l.style.strokeDashoffset = '0';
                     });
                 }, i * 200);
             });
         },
-        'web_app': function(card) {
+        'web_app': function (card) {
             var panel = card.querySelector('.panel');
             if (panel) panel.style.animation = 'slidePanel 1.8s ease-in-out 2';
-            ['status1','status2','status3'].forEach(function(cls, i) {
+            ['status1', 'status2', 'status3'].forEach(function (cls, i) {
                 var el = card.querySelector('.' + cls);
                 if (el) el.style.animation = 'blinkDot 1s ' + (i * 0.3) + 's ease-in-out 3';
             });
         },
-        'web_custom': function(card) {
+        'web_custom': function (card) {
             var conn = card.querySelector('.conn');
-            if (conn) { conn.style.transition = 'stroke-dashoffset .8s ease'; conn.style.strokeDashoffset = '0'; }
-            ['node2','node3','node4'].forEach(function(cls, i) {
+            if (conn) {
+                conn.style.transition = 'stroke-dashoffset .8s ease';
+                conn.style.strokeDashoffset = '0';
+            }
+            ['node2', 'node3', 'node4'].forEach(function (cls, i) {
                 var el = card.querySelector('.' + cls);
                 if (!el) return;
                 el.style.transform = 'scale(0)';
                 el.style.transformBox = 'fill-box';
                 el.style.transformOrigin = 'center';
-                setTimeout(function() {
+                setTimeout(function () {
                     el.style.transition = 'transform .3s cubic-bezier(.34,1.56,.64,1)';
                     el.style.transform = 'scale(1)';
                 }, 300 + i * 200);
             });
         },
-        'web_deign': function(card) {
+        'web_deign': function (card) {
             var mg = card.querySelector('.mockup-group');
             if (mg) mg.style.animation = 'floatUp 2s ease-in-out 2';
         },
-        'analyze': function(card) {
+        'analyze': function (card) {
             var b1 = card.querySelector('.b1');
             var b2 = card.querySelector('.b2');
             if (b1) {
-                b1.style.transform = 'scale(0)'; b1.style.opacity = '0';
-                setTimeout(function() { b1.style.transition = 'transform .4s ease, opacity .4s ease'; b1.style.transform = 'scale(1)'; b1.style.opacity = '1'; }, 80);
+                b1.style.transform = 'scale(0)';
+                b1.style.opacity = '0';
+                setTimeout(function () {
+                    b1.style.transition = 'transform .4s ease, opacity .4s ease';
+                    b1.style.transform = 'scale(1)';
+                    b1.style.opacity = '1';
+                }, 80);
             }
             if (b2) {
-                b2.style.transform = 'scale(0)'; b2.style.opacity = '0';
-                setTimeout(function() { b2.style.transition = 'transform .4s ease, opacity .4s ease'; b2.style.transform = 'scale(1)'; b2.style.opacity = '1'; }, 360);
+                b2.style.transform = 'scale(0)';
+                b2.style.opacity = '0';
+                setTimeout(function () {
+                    b2.style.transition = 'transform .4s ease, opacity .4s ease';
+                    b2.style.transform = 'scale(1)';
+                    b2.style.opacity = '1';
+                }, 360);
             }
-            ['dd1','dd2','dd3'].forEach(function(cls, i) {
+            ['dd1', 'dd2', 'dd3'].forEach(function (cls, i) {
                 var el = card.querySelector('.' + cls);
                 if (el) el.style.animation = 'dotDot 1.2s ' + (0.6 + i * 0.2) + 's ease-in-out 3';
             });
         },
-        'design': function(card) {
-            ['w1','w2','w3'].forEach(function(cls, i) {
+        'design': function (card) {
+            ['w1', 'w2', 'w3'].forEach(function (cls, i) {
                 var el = card.querySelector('.' + cls);
-                if (el) setTimeout(function() { el.style.transition = 'stroke-dashoffset .5s ease'; el.style.strokeDashoffset = '0'; }, 100 + i * 300);
+                if (el) setTimeout(function () {
+                    el.style.transition = 'stroke-dashoffset .5s ease';
+                    el.style.strokeDashoffset = '0';
+                }, 100 + i * 300);
             });
             var pencil = card.querySelector('.pencil');
             if (pencil) pencil.style.animation = 'pencilMove 2.5s .2s ease-in-out 2';
         },
-        'development': function(card) {
-            ['tl1','tl2','tl3','tl4'].forEach(function(cls, i) {
+        'development': function (card) {
+            ['tl1', 'tl2', 'tl3', 'tl4'].forEach(function (cls, i) {
                 var el = card.querySelector('.' + cls);
                 if (!el) return;
                 el.style.transition = 'none';
                 el.style.strokeDasharray = '50';
                 el.style.strokeDashoffset = '50';
-                setTimeout(function() {
+                setTimeout(function () {
                     el.style.transition = 'stroke-dashoffset .35s ease';
                     el.style.strokeDashoffset = '0';
                 }, 50 + i * 250);
             });
             var cursor = card.querySelector('.term-cursor');
             if (cursor) {
-                setTimeout(function() {
+                setTimeout(function () {
                     cursor.style.animation = 'termBlink .8s step-end 6';
                 }, 1100);
             }
@@ -395,7 +426,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 gear.style.animation = 'gearSpin 2s linear 3';
             }
         },
-        'final': function(card) {
+        'final': function (card) {
             var rocket = card.querySelector('.rocket');
             if (rocket) rocket.style.animation = 'rocketLift 1.4s ease-in-out 2';
             var ring = card.querySelector('.launch-ring');
@@ -409,7 +440,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function triggerIconAnim(card) {
         var classes = Array.from(card.classList);
-        var match = classes.find(function(c) { return iconAnimMap[c]; });
+        var match = classes.find(function (c) {
+            return iconAnimMap[c];
+        });
         if (match) iconAnimMap[match](card);
     }
 
@@ -419,22 +452,26 @@ document.addEventListener('DOMContentLoaded', () => {
         var cards = boxes.querySelectorAll(':scope > div');
         if (!cards.length) return;
 
-        var obs = new IntersectionObserver(function(entries) {
-            entries.forEach(function(entry) {
+        var obs = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
                 if (!entry.isIntersecting) return;
                 var card = entry.target;
                 var i = Array.from(cards).indexOf(card);
-                setTimeout(function() {
+                setTimeout(function () {
                     card.classList.add('visible');
                     if (isTouchDevice()) {
-                        setTimeout(function() { triggerIconAnim(card); }, 450);
+                        setTimeout(function () {
+                            triggerIconAnim(card);
+                        }, 450);
                     }
                 }, i * delayStep);
                 obs.unobserve(card);
             });
         }, {threshold: 0.1, rootMargin: '0px 0px -40px 0px'});
 
-        cards.forEach(function(card) { obs.observe(card); });
+        cards.forEach(function (card) {
+            obs.observe(card);
+        });
     }
 
     initCardReveal('.services_boxes', 180);
@@ -540,4 +577,105 @@ document.addEventListener('DOMContentLoaded', () => {
         }, {threshold: 0.1});
     }
 
+    document.getElementById("accept-cookies").onclick = function () {
+        localStorage.setItem(CONSENT_KEY, "accepted");
+        document.getElementById("cookie-consent-popup").style.display = "none";
+        enableAnalytics();
+    };
+
+    document.getElementById("decline-cookies").onclick = function () {
+        localStorage.setItem(CONSENT_KEY, "rejected");
+        document.getElementById("cookie-consent-popup").style.display = "none";
+    };
+
+    document.getElementById("show-cookie-info").onclick = function () {
+        document.getElementById("cookie-modal").classList.add("active");
+        document.getElementById('cookieIntro').classList.replace("hidden", "active");
+        document.getElementById('cookieSettings').classList.replace("active", "hidden");
+    };
+
+    document.getElementById("cookies_button").onclick = function () {
+        document.getElementById("cookie-modal").classList.add("active");
+        document.getElementById('cookieSettings').classList.replace("hidden", "active");
+        document.getElementById('cookieIntro').classList.replace("active", "hidden");
+    };
+
+    document.getElementById("modalClose").onclick = closeCookieModal;
+
+    function closeCookieModal() {
+        document.getElementById("cookie-modal").classList.remove("active");
+    }
+
+    document.getElementById('save_cookies').onclick = function () {
+        const analytics = document.getElementById("analyticsToggle").checked;
+
+        if (analytics) {
+            localStorage.setItem(CONSENT_KEY, "accepted");
+            enableAnalytics();
+        } else {
+            localStorage.setItem(CONSENT_KEY, "rejected");
+            disableAnalytics();
+        }
+
+        closeCookieModal();
+    };
+
+    document.getElementById('reject_all_cookies').onclick = function () {
+        localStorage.setItem(CONSENT_KEY, "rejected");
+
+        const toggle = document.getElementById("analyticsToggle");
+        if (toggle) toggle.checked = false;
+
+        disableAnalytics();
+        closeCookieModal();
+    };
+
+
+    function enableAnalytics() {
+        if (analyticsLoaded) return;
+        analyticsLoaded = true;
+
+        window.dataLayer = window.dataLayer || [];
+        window.gtag = function () {
+            dataLayer.push(arguments);
+        };
+
+        const script = document.createElement("script");
+        script.async = true;
+        script.src = "https://www.googletagmanager.com/gtag/js?id=G-JJWTBVCPJV";
+        document.head.appendChild(script);
+
+        script.onload = function () {
+            gtag('js', new Date());
+
+            gtag('consent', 'update', {
+                analytics_storage: 'granted'
+            });
+
+            gtag('config', 'G-JJWTBVCPJV');
+        };
+    }
+
+    function disableAnalytics() {
+        console.log("Analytics DISABLED");
+
+        if (typeof gtag === "function") {
+            gtag('consent', 'update', {
+                analytics_storage: 'denied'
+            });
+        }
+
+        deleteCookie("_ga");
+
+        document.cookie.split(";").forEach(c => {
+            const name = c.split("=")[0].trim();
+            if (name.startsWith("_ga") || name.startsWith("ga_")) {
+                deleteCookie(name);
+            }
+        });
+    }
+
+    function deleteCookie(name) {
+        document.cookie = name + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+    }
 });

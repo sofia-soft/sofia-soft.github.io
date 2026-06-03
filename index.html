@@ -232,22 +232,22 @@
 
 
             <div class="web_custom" itemscope itemtype="https://schema.org/Service">
-                    <svg width="60" height="60" viewBox="0 0 48 48" fill="none" class="service_icons">
-                        <path class="conn" d="M24 10 L38 22 M24 10 L10 22 M10 22 L18 36 M38 22 L30 36" stroke="#B5D4F4"
-                              stroke-width="1.2" stroke-linecap="round" fill="none"/>
-                        <circle class="node1" cx="24" cy="10" r="5" fill="#185FA5" stroke="#378ADD" stroke-width="1.2"/>
-                        <circle cx="24" cy="10" r="2" fill="white" opacity=".7"/>
-                        <circle class="node2" cx="10" cy="22" r="4" fill="#378ADD" stroke="#85B7EB" stroke-width="1"/>
-                        <circle cx="10" cy="22" r="1.5" fill="white" opacity=".6"/>
-                        <circle class="node3" cx="38" cy="22" r="4" fill="#378ADD" stroke="#85B7EB" stroke-width="1"/>
-                        <circle cx="38" cy="22" r="1.5" fill="white" opacity=".6"/>
-                        <rect class="node4" x="14" y="32" width="8" height="8" rx="2" fill="#85B7EB" stroke="#378ADD"
-                              stroke-width="1"/>
-                        <rect x="26" y="32" width="8" height="8" rx="2" fill="#85B7EB" stroke="#378ADD"
-                              stroke-width="1"/>
-                        <line x1="24" y1="8" x2="24" y2="12" stroke="white" stroke-width="1.2" stroke-linecap="round"/>
-                        <line x1="22" y1="10" x2="26" y2="10" stroke="white" stroke-width="1.2" stroke-linecap="round"/>
-                    </svg>
+                <svg width="60" height="60" viewBox="0 0 48 48" fill="none" class="service_icons">
+                    <path class="conn" d="M24 10 L38 22 M24 10 L10 22 M10 22 L18 36 M38 22 L30 36" stroke="#B5D4F4"
+                          stroke-width="1.2" stroke-linecap="round" fill="none"/>
+                    <circle class="node1" cx="24" cy="10" r="5" fill="#185FA5" stroke="#378ADD" stroke-width="1.2"/>
+                    <circle cx="24" cy="10" r="2" fill="white" opacity=".7"/>
+                    <circle class="node2" cx="10" cy="22" r="4" fill="#378ADD" stroke="#85B7EB" stroke-width="1"/>
+                    <circle cx="10" cy="22" r="1.5" fill="white" opacity=".6"/>
+                    <circle class="node3" cx="38" cy="22" r="4" fill="#378ADD" stroke="#85B7EB" stroke-width="1"/>
+                    <circle cx="38" cy="22" r="1.5" fill="white" opacity=".6"/>
+                    <rect class="node4" x="14" y="32" width="8" height="8" rx="2" fill="#85B7EB" stroke="#378ADD"
+                          stroke-width="1"/>
+                    <rect x="26" y="32" width="8" height="8" rx="2" fill="#85B7EB" stroke="#378ADD"
+                          stroke-width="1"/>
+                    <line x1="24" y1="8" x2="24" y2="12" stroke="white" stroke-width="1.2" stroke-linecap="round"/>
+                    <line x1="22" y1="10" x2="26" y2="10" stroke="white" stroke-width="1.2" stroke-linecap="round"/>
+                </svg>
                 <div class="card-body">
                     <h3 itemprop="name">Custom Web Solutions</h3>
                     <p itemprop="description">Индивидуални софтуерни решения, напълно адаптирани към специфичните нужди
@@ -666,7 +666,16 @@
             </div>
         </div>
     </section>
-
+    <div id="cookie-consent-popup">
+        <div class="popup-content">
+            <p>Този сайт използва бисквитки, за да ви предостави най-доброто изживяване на сайта. Чрез натискане на
+                "Приемам", вие се съгласявате с използването на всички бисквитки, включително аналитични бисквитки като
+                Google Analytics. Можете да промените настройките по всяко време.</p>
+            <button id="accept-cookies">Приемам</button>
+            <button id="decline-cookies">Отказвам</button>
+            <button id="show-cookie-info">Научете повече</button>
+        </div>
+    </div>
 </main>
 
 <footer role="contentinfo">
@@ -712,7 +721,8 @@
     </div>
 
     <div class="footer_bottom">
-        <img src="images/footer_logo.ss26.svg" alt="София Софт - уеб разработка и софтуерни решения" loading="lazy" width="247" height="213"
+        <img src="images/footer_logo.ss26.svg" alt="София Софт - уеб разработка и софтуерни решения" loading="lazy"
+             width="247" height="213"
              class="footer_logo">
         <span class="footer_copy">© 2026 София Софт. Всички права са запазени.</span>
     </div>
@@ -721,6 +731,106 @@
 <a href="#hero" class="scroll_up" aria-label="Върнете се в началото на страницата" role="button">
     <img src="images/up.ss26.svg" alt="" width="40" height="40" data-nosnippet aria-hidden="true" class="up">
 </a>
+<a class="cookies_button" id="cookies_button" aria-label="Настройки на кукитата" role="button">
+    <img src="images/cookie.ss25.svg" alt="" width="40" height="40" data-nosnippet aria-hidden="true" class="cookie">
+</a>
+
+
+<div id="cookie-modal">
+    <div class="modal_content">
+        <button class="modal_close" id="modalClose">✕</button>
+        <div id="cookieIntro" class="cookie-section cookie-info hidden">
+            <h2>Политика за бисквитките</h2>
+
+            <p>
+                Този сайт използва бисквитки, за да осигури нормалната си работа и да анализира
+                посещаемостта чрез Google Analytics.
+            </p>
+
+            <h3>Какво представляват бисквитките?</h3>
+
+            <p>
+                Бисквитките са малки текстови файлове, които се съхраняват във Вашия браузър.
+                Те помагат на сайта да функционира правилно и да събира анонимна статистическа
+                информация за използването му.
+            </p>
+
+            <h3>Какви бисквитки използваме?</h3>
+
+            <p>
+                След Вашето съгласие сайтът използва Google Analytics за анализ на посещенията
+                и подобряване на потребителското изживяване.
+            </p>
+
+            <table>
+                <thead>
+                <tr>
+                    <th>Бисквитка</th>
+                    <th>Предназначение</th>
+                    <th>Срок</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>_ga</td>
+                    <td>Използва се за разграничаване на уникални потребители и събиране на статистика за посещенията на
+                        сайта.
+                    </td>
+                    <td>2 години</td>
+                </tr>
+                <tr>
+                    <td>ga_*</td>
+                    <td>Google Analytics 4 cookies, използвани за съхранение на информация за сесии и взаимодействия с
+                        сайта (напр. посещения, събития).
+                    </td>
+                    <td>2 години</td>
+                </tr>
+                </tbody>
+            </table>
+
+            <h3>Управление на бисквитките</h3>
+
+            <p>
+                Можете да приемете или откажете аналитичните бисквитки чрез този прозорец.
+                Също така можете да изтриете или блокирате бисквитките от настройките на Вашия браузър по всяко време.
+            </p>
+
+            <p>
+                Ако имате въпроси относно използването на бисквитки, можете да се свържете с нас чрез
+                посочените в сайта данни за контакт.
+            </p>
+        </div>
+        <div id="cookieSettings" class="cookie-section cookie-settings hidden">
+
+            <h2>Настройки на бисквитките</h2>
+
+            <p class="cookie-desc">
+                Тук можеш да избереш кои бисквитки да разрешиш. Задължителните са необходими за работата на сайта.
+            </p>
+
+            <div class="cookie-option">
+                <div class="cookie-text">
+                    <h3>Задължителни бисквитки</h3>
+                    <p>Нужни за правилната работа на сайта.</p>
+                </div>
+                <input type="checkbox" checked disabled>
+            </div>
+
+            <div class="cookie-option">
+                <div class="cookie-text">
+                    <h3>Аналитични бисквитки</h3>
+                    <p>Помагат ни да разберем как се използва сайтът (Google Analytics).</p>
+                </div>
+                <input type="checkbox" id="analyticsToggle">
+            </div>
+
+            <div class="cookie-actions">
+                <button id="save_cookies" class="btn primary">Запази настройките</button>
+                <button id="reject_all_cookies" class="btn secondary">Откажи всички</button>
+            </div>
+        </div>
+    </div>
+</div>
 
 <script type="application/ld+json">
     {
@@ -750,17 +860,5 @@
 </script>
 
 <script src="js/javascript.ss26.js" defer></script>
-<script defer src="https://www.googletagmanager.com/gtag/js?id=G-JJWTBVCPJV"></script>
-<script>
-    window.dataLayer = window.dataLayer || [];
-
-    function gtag() {
-        dataLayer.push(arguments);
-    }
-
-    gtag('js', new Date());
-    gtag('config', 'G-JJWTBVCPJV');
-</script>
-
 </body>
 </html>
