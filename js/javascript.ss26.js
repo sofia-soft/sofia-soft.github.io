@@ -669,13 +669,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
         document.cookie.split(";").forEach(c => {
             const name = c.split("=")[0].trim();
-            if (name.startsWith("_ga") || name.startsWith("ga_")) {
+
+            if (name.startsWith("_ga")) {
                 deleteCookie(name);
             }
         });
     }
 
     function deleteCookie(name) {
+        const domain = location.hostname;
+
         document.cookie = name + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+        document.cookie = name + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=" + domain;
     }
 });
