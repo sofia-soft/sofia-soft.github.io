@@ -611,6 +611,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (analytics) {
             localStorage.setItem(CONSENT_KEY, "accepted");
+
+            analyticsLoaded = false;
+
             enableAnalytics();
         } else {
             localStorage.setItem(CONSENT_KEY, "rejected");
@@ -619,7 +622,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
         closeCookieModal();
     };
-
     document.getElementById('reject_all_cookies').onclick = function () {
         localStorage.setItem(CONSENT_KEY, "rejected");
 
@@ -630,15 +632,21 @@ document.addEventListener('DOMContentLoaded', () => {
         closeCookieModal();
     };
 
-
     function enableAnalytics() {
-        if (analyticsLoaded) return;
+        if (analyticsLoaded) {
+            console.log("Analytics already loaded");
+            return;
+        }
+
         analyticsLoaded = true;
 
         window.dataLayer = window.dataLayer || [];
-        window.gtag = function () {
-            dataLayer.push(arguments);
-        };
+        function gtag(){ dataLayer.push(arguments); }
+        window.gtag = gtag;
+
+        gtag('consent', 'default', {
+            analytics_storage: 'denied'
+        });
 
         const script = document.createElement("script");
         script.async = true;
@@ -646,6 +654,7 @@ document.addEventListener('DOMContentLoaded', () => {
         document.head.appendChild(script);
 
         script.onload = function () {
+
             gtag('js', new Date());
 
             gtag('consent', 'update', {
@@ -653,11 +662,14 @@ document.addEventListener('DOMContentLoaded', () => {
             });
 
             gtag('config', 'G-JJWTBVCPJV');
+
+            gtag('event', 'page_view');
         };
     }
 
     function disableAnalytics() {
         console.log("Analytics DISABLED");
+        analyticsLoaded = false;
 
         if (typeof gtag === "function") {
             gtag('consent', 'update', {
