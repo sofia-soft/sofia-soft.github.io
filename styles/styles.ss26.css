@@ -114,6 +114,7 @@ a {
 .cookies_button {
     right: 15px;
     bottom: 15px;
+    border: none;
 }
 
 .scroll_up:hover, .cookies_button:hover {
