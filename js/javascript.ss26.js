@@ -449,7 +449,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function initCardReveal(boxesSel, delayStep) {
         var boxes = document.querySelector(boxesSel);
         if (!boxes) return;
-        var cards = boxes.querySelectorAll(':scope > div');
+        var cards = boxes.querySelectorAll(':scope > article');
         if (!cards.length) return;
 
         var obs = new IntersectionObserver(function (entries) {
