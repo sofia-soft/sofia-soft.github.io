@@ -96,10 +96,10 @@ a {
 /*
    Scroll Up
 */
-.scroll_up, .cookies_button {
+.scroll_up, .cookies_button, .flag {
     position: fixed;
     right: 15px;
-    bottom: 80px;
+    bottom: 130px;
     z-index: 200;
     width: 50px;
     height: 50px;
@@ -111,9 +111,15 @@ a {
     cursor: pointer;
     transition: background-color 0.2s;
 }
-.cookies_button {
+.flag {
     right: 15px;
     bottom: 15px;
+    border: none;
+}
+
+.cookies_button {
+    right: 15px;
+    bottom: 75px;
     border: none;
 }
 
@@ -186,7 +192,7 @@ a {
     width: fit-content;
 }
 
-section {
+section, .page_not_found  {
     min-height: 80vh;
     position: relative;
     display: flex;
@@ -194,6 +200,17 @@ section {
     justify-content: center;
     overflow: hidden;
     scroll-snap-align: start;
+}
+
+.page_not_found {
+    margin-top: 20px;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.page_not_found > img {
+    width: 500px;
+    height: 500px;
 }
 
 section canvas {
@@ -265,7 +282,11 @@ section canvas {
     height .5s cubic-bezier(.4, 0, .2, 1);
 }
 
-.hero_desc > .contact{
+.flag > img{
+    width: 25px;
+    height: 25px;
+}
+.hero_desc > .contact, .go_to_home{
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -285,7 +306,11 @@ section canvas {
     transition: background 0.2s, box-shadow 0.2s;
 }
 
-.hero_desc > .contact:hover{
+.go_to_home {
+    font-size: 14px;
+}
+
+.hero_desc > .contact:hover, .go_to_home:hover{
     background-color: #4a8fe8;
     color: #ffffff;
     box-shadow: 4px 3px 4px rgba(19, 33, 51, 0.2);

@@ -14,6 +14,9 @@ document.addEventListener('DOMContentLoaded', () => {
         enableAnalytics();
     }
 
+    const lang = navigator.language.startsWith("bg") ? "bg" : "en";
+    localStorage.setItem("lang", lang);
+
     const header = document.querySelector('.header');
     const burger = document.querySelector('.burger');
     const navList = document.querySelector('.nav_list');

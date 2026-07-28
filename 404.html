@@ -2,19 +2,68 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>404 - Страницата не е намерена | София Софт</title>
+    <title>404 - Page Not Found | Sofia Soft</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="noindex, follow">
-    <link rel="stylesheet" href="styles/styles.ss26.css">
+    <link rel="stylesheet" href="/styles/styles.ss26.css">
+
+    <script>
+        const i18n = {
+            en: {
+                htmlLang: "en",
+                title: "404 - Page Not Found | Sofia Soft",
+                strong: "Hmm… this link didn't work.",
+                text: "It looks like the page has been moved, deleted, or was never deployed.",
+                button: "Go to the homepage",
+                home: "/en/"
+            },
+            bg: {
+                htmlLang: "bg",
+                title: "404 - Страницата не е намерена | Sofia Soft",
+                strong: "Хмм… този линк не стартира.",
+                text: "Изглежда страницата е преместена, изтрита или никога не е била deploy-ната.",
+                button: "Към началната страница",
+                home: "/"
+            }
+        };
+
+        document.addEventListener("DOMContentLoaded", () => {
+
+            document.body.classList.add("ready");
+
+            const saved = localStorage.getItem("lang");
+            const browser = navigator.language.startsWith("bg") ? "bg" : "en";
+            const lang = saved || browser;
+
+            const t = i18n[lang];
+
+            document.documentElement.lang = t.htmlLang;
+            document.title = t.title;
+
+            document.getElementById("strong").textContent = t.strong;
+            document.getElementById("text").textContent = t.text;
+
+            const home = document.getElementById("home");
+            home.textContent = t.button;
+            home.href = t.home;
+        });
+    </script>
 </head>
+
 <body>
+
 <section class="page_not_found">
-    <img src="images/404.ss26.svg" alt="" srcset="">
+
+    <img src="/images/404.ss26.svg" alt="404">
+
     <div class="page_not_found_desc">
-        <p><strong>Хмм… този линк не стартира.</strong></p>
-        <p>Изглежда страницата е преместена, изтрита или никога не е била deploy-ната.</p>
+        <p><strong id="strong"></strong></p>
+        <p id="text"></p>
     </div>
-    <a href="/">Към началната страница</a>
+
+    <a id="home" class="go_to_home"></a>
+
 </section>
+
 </body>
 </html>
