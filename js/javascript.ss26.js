@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
         enableAnalytics();
     }
 
-    const lang = navigator.language.startsWith("bg") ? "bg" : "en";
+    const lang = document.documentElement.lang;
     localStorage.setItem("lang", lang);
 
     const header = document.querySelector('.header');

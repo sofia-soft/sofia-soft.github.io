@@ -32,8 +32,7 @@
             document.body.classList.add("ready");
 
             const saved = localStorage.getItem("lang");
-            const browser = navigator.language.startsWith("bg") ? "bg" : "en";
-            const lang = saved || browser;
+            const lang = saved || document.documentElement.lang;
 
             const t = i18n[lang];
 
