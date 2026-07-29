@@ -136,7 +136,8 @@ a {
    Budget Pills
 */
 .service_budget,
-.how_work_budget {
+.how_work_budget,
+.faq_budget {
     position: relative;
     z-index: 2;
     display: inline-flex;
@@ -154,7 +155,8 @@ a {
 }
 
 .service_budget::before,
-.how_work_budget::before {
+.how_work_budget::before,
+.faq_budget::before {
     content: '';
     width: 6px;
     height: 6px;
@@ -700,7 +702,7 @@ nav > .nav_list li:last-child {
     text-align: center;
     width: 450px;
     max-width: 100%;
-    height: 400px;
+    min-height: 400px;
     border-radius: 18px;
     overflow: hidden;
     border: 1px solid var(--card-border);
@@ -716,7 +718,8 @@ nav > .nav_list li:last-child {
     border-color .3s,
     box-shadow .35s;
     justify-content: center;
-    gap: 20px
+    gap: 20px;
+    padding: 30px 0;
 }
 
 .services_boxes > article.visible {
@@ -1190,7 +1193,7 @@ nav > .nav_list li:last-child {
     text-align: center;
     width: 450px;
     max-width: 100%;
-    height: 400px;
+    min-height: 400px;
     padding: 42px 25px 30px;
     border-radius: 18px;
     border: 1px solid var(--card-border);
@@ -1703,6 +1706,156 @@ nav > .nav_list li:last-child {
 
 .final:hover .launch-ring {
     animation: ringExpand 1.6s ease-out infinite;
+}
+
+/* ══════════════════════════════════════════════
+   FAQ SECTION
+══════════════════════════════════════════════ */
+#faq {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 48px;
+    padding: 80px 20px 90px;
+    background-color: var(--athens-gray);
+    background-image: radial-gradient(circle, rgba(19, 33, 51, .1) 1px, transparent 1px);
+    background-size: 26px 26px;
+}
+
+.faq_title_content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 35px;
+}
+
+.faq_title {
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 35px;
+    color: var(--big-stone);
+    margin: 0;
+}
+
+.faq_title .title-accent {
+    color: var(--malibu);
+}
+
+.faq_sub_title {
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 24px;
+    color: var(--big-stone);
+    max-width: 308px;
+}
+
+.faq_list {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 100%;
+    max-width: 870px;
+}
+
+.faq_item {
+    border: 1px solid var(--card-border);
+    border-radius: 18px;
+    overflow: hidden;
+    background: radial-gradient(circle at 110% -10%, rgba(97, 164, 255, .16) 0%, transparent 52%),
+    radial-gradient(circle at 110% -10%, rgba(49, 83, 130, .09) 30%, transparent 68%),
+    var(--white);
+    box-shadow: 8px 6px 8px rgba(237, 238, 239, 0.6);
+    transition: border-color .3s, box-shadow .35s;
+}
+
+.faq_item:hover,
+.faq_item[open] {
+    border-color: var(--malibu);
+    box-shadow: 8px 6px 8px rgba(19, 33, 51, 0.12);
+}
+
+.faq_item summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 20px 22px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 24px;
+    color: var(--big-stone);
+    list-style: none;
+    transition: color .25s;
+}
+
+.faq_item summary:hover {
+    color: var(--chambray);
+}
+
+.faq_item summary::-webkit-details-marker {
+    display: none;
+}
+
+.faq_item summary::after {
+    content: '+';
+    font-size: 28px;
+    font-weight: 400;
+    line-height: 1;
+    color: var(--malibu);
+    flex-shrink: 0;
+    transition: transform .3s ease;
+}
+
+.faq_item[open] summary::after {
+    transform: rotate(45deg);
+}
+
+.faq_item > p {
+    padding: 0 22px 22px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 25px;
+    color: var(--big-stone);
+}
+
+@media (min-width: 768px) {
+    .faq_sub_title {
+        max-width: unset;
+    }
+
+    .faq_item summary {
+        font-size: 20px;
+        padding: 22px 26px;
+    }
+
+    .faq_item > p {
+        font-size: 18px;
+        line-height: 28px;
+        padding: 0 26px 24px;
+    }
+}
+
+@media (min-width: 1024px) {
+    #faq {
+        padding: 80px;
+        gap: 45px;
+    }
+
+    .faq_list {
+        width: 80%;
+    }
+}
+
+@media (min-width: 1440px) {
+    #faq {
+        padding: 100px 120px;
+    }
 }
 
 /* ══════════════════════════════════════════════
@@ -2936,7 +3089,7 @@ footer {
         font-size: 2.2rem;
     }
 
-    .service_budget, .how_work_budget,
+    .service_budget, .how_work_budget, .faq_budget,
     .hero_budget, .about_us_budget, .contact_budget {
         font-size: 20px;
     }
@@ -2951,7 +3104,7 @@ footer {
     }
 
     .services_boxes > article, .how_work_boxes > article {
-        height: 400px;
+        min-height: 400px;
     }
 
     .footer_contact_list {
