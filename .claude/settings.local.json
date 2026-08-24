@@ -10,7 +10,20 @@
       "WebFetch(domain:sofia-soft.com)",
       "Bash(curl -s -o /dev/null -w \"HTTP %{http_code} | server: %header{server} | %{url_effective}\\\\n\" -A \"Mozilla/5.0 \\(Windows NT 10.0; Win64; x64\\) AppleWebKit/537.36 \\(KHTML, like Gecko\\) Chrome/126.0 Safari/537.36\" https://sofia-soft.com/)",
       "Bash(curl -s -o /dev/null -w \"Googlebot test: HTTP %{http_code}\\\\n\" -A \"Mozilla/5.0 \\(compatible; Googlebot/2.1; +http://www.google.com/bot.html\\)\" https://sofia-soft.com/)",
-      "Bash(curl -s -o /dev/null -w \"No-UA test: HTTP %{http_code}\\\\n\" https://sofia-soft.com/)"
+      "Bash(curl -s -o /dev/null -w \"No-UA test: HTTP %{http_code}\\\\n\" https://sofia-soft.com/)",
+      "Bash(grep -nE '^\\\\s*\\(#hero|\\\\.hero[ _.,{]|\\\\.hero\\\\b|\\\\.hero_content|\\\\.hero_desc|\\\\.hero_budget|\\\\.hero_title|\\\\.hero_sub_title|section\\\\b|section\\\\[id\\\\]|\\\\.service_budget|\\\\.service_title|\\\\.services_boxes|\\\\.card-body|\\\\.title-accent|\\\\.web_dev|\\\\.sec-glow|\\\\.contact\\\\b\\)' styles/styles.ss26.css)",
+      "Bash(python -)",
+      "Bash(python -m http.server 8000 --bind 127.0.0.1)",
+      "Bash(curl -s -o /dev/null -w \"izrabotka: HTTP %{http_code}, %{size_download} bytes\\\\n\" http://127.0.0.1:8000/uslugi/izrabotka-na-sait/)",
+      "Bash(curl -s -o /dev/null -w \"saas:      HTTP %{http_code}, %{size_download} bytes\\\\n\" http://127.0.0.1:8000/uslugi/saas-razrabotka/)",
+      "Bash(curl -s -o /dev/null -w \"custom:    HTTP %{http_code}, %{size_download} bytes\\\\n\" http://127.0.0.1:8000/uslugi/custom-software/)",
+      "Bash(curl -s -o /dev/null -w \"css:       HTTP %{http_code}\\\\n\" http://127.0.0.1:8000/styles/styles.ss26.css)",
+      "Bash(curl -s -o /dev/null -w \"js:        HTTP %{http_code}\\\\n\" http://127.0.0.1:8000/js/javascript.ss26.js)",
+      "Bash(curl -s -o /dev/null -w \"root: HTTP %{http_code}\\\\n\" http://127.0.0.1:8000/)",
+      "Bash(curl -s -o /dev/null -w \"index.html: HTTP %{http_code}\\\\n\" http://127.0.0.1:8000/index.html)",
+      "Bash(curl -s \"http://127.0.0.1:8010/styles/styles.ss26.css\")",
+      "Bash(curl -s \"http://127.0.0.1:8010/\")",
+      "Bash(python -c \"s=open\\('styles/styles.ss26.css',encoding='utf-8'\\).read\\(\\); print\\('open',s.count\\('{'\\),'close',s.count\\('}'\\),'=> OK' if s.count\\('{'\\)==s.count\\('}'\\) else '=> MISMATCH'\\)\")"
     ]
   }
 }
