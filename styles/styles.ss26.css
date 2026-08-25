@@ -4,6 +4,7 @@
 :root {
     --big-stone: #132133;
     --malibu: #61A4FF;
+    --malibu-text: #256BB7;
     --athens-gray: #F9FAFB;
     --chambray: #315382;
     --porcelain: #EDEEEF;
@@ -650,7 +651,7 @@ nav > .nav_list li:last-child {
 
 .service_title .title-accent,
 .how_work_title .title-accent {
-    color: var(--malibu);
+    color: var(--malibu-text);
 }
 
 .service_sub_tite {
@@ -1739,7 +1740,7 @@ nav > .nav_list li:last-child {
 }
 
 .faq_title .title-accent {
-    color: var(--malibu);
+    color: var(--malibu-text);
 }
 
 .faq_sub_title {
