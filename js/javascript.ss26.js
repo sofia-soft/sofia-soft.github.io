@@ -56,6 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }, {passive: true});
 
     let scrollTicking = false;
+
     function updateHeader() {
         if (header) header.classList.toggle('shrunk', window.innerWidth >= 1024 && window.scrollY > 80);
     }
@@ -71,12 +72,16 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('resize', updateHeader, {passive: true});
     updateHeader();
 
+    function getNavigationOffset() {
+        return header ? header.offsetHeight + 16 : 0;
+    }
+
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', (event) => {
             const target = document.querySelector(anchor.getAttribute('href'));
             if (!target || !header) return;
             event.preventDefault();
-            const offset = target.getBoundingClientRect().top + window.scrollY - header.offsetHeight - 16;
+            const offset = target.getBoundingClientRect().top + window.scrollY - getNavigationOffset();
             window.scrollTo({top: offset, behavior: 'smooth'});
         });
     });
@@ -95,17 +100,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const sections = document.querySelectorAll('section[id]');
     const navLinks = document.querySelectorAll('.nav_list a, .footer_nav a');
+    const ACTIVE_SECTION_BUFFER = 24;
+
     function setActiveLink() {
         if (!header) return;
-        const scrollY = window.scrollY;
+        const scrollPosition = window.scrollY + getNavigationOffset() + ACTIVE_SECTION_BUFFER;
+        let activeId = null;
         sections.forEach(section => {
-            const top = section.offsetTop - header.offsetHeight - 10;
+            const top = section.offsetTop;
             const bottom = top + section.offsetHeight;
-            if (scrollY < top || scrollY >= bottom) return;
-            const id = section.getAttribute('id');
-            navLinks.forEach(link => link.classList.toggle('active', link.getAttribute('href') === `#${id}`));
+            if (scrollPosition >= top && scrollPosition < bottom) activeId = section.getAttribute('id');
         });
+        navLinks.forEach(link => link.classList.toggle('active', link.getAttribute('href') === `#${activeId}`));
     }
+
     window.addEventListener('scroll', setActiveLink, {passive: true});
     setActiveLink();
 
@@ -136,12 +144,16 @@ document.addEventListener('DOMContentLoaded', () => {
                 this.reset();
                 if (success) {
                     success.style.display = 'flex';
-                    setTimeout(() => { success.style.display = 'none'; }, 5000);
+                    setTimeout(() => {
+                        success.style.display = 'none';
+                    }, 5000);
                 }
                 if (buttonText) buttonText.textContent = initialText;
             } catch {
                 if (buttonText) buttonText.textContent = lang === 'bg' ? 'Грешка — опитайте отново' : 'Error — please try again';
-                setTimeout(() => { if (buttonText) buttonText.textContent = initialText; }, 3000);
+                setTimeout(() => {
+                    if (buttonText) buttonText.textContent = initialText;
+                }, 3000);
             } finally {
                 if (button) button.disabled = false;
             }
@@ -157,7 +169,9 @@ document.addEventListener('DOMContentLoaded', () => {
         if (analyticsLoaded) return;
         analyticsLoaded = true;
         window.dataLayer = window.dataLayer || [];
-        window.gtag = window.gtag || function () { window.dataLayer.push(arguments); };
+        window.gtag = window.gtag || function () {
+            window.dataLayer.push(arguments);
+        };
         window.gtag('consent', 'default', {analytics_storage: 'denied'});
         const script = document.createElement('script');
         script.async = true;

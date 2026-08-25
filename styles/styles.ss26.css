@@ -1966,7 +1966,7 @@ nav > .nav_list li:last-child {
     font-family: 'Montserrat', sans-serif;
     border: none;
     border-radius: 12px;
-    color: var(--white);
+    color: var(--big-stone);
     font-size: 20px;
     font-weight: 700;
     cursor: pointer;

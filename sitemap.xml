@@ -1,52 +1,76 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  <url>
-    <loc>https://sofia-soft.com/</loc>
-    <lastmod>2026-07-29</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>1.0</priority>
-    <xhtml:link rel="alternate" hreflang="bg" href="https://sofia-soft.com/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://sofia-soft.com/en/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://sofia-soft.com/"/>
-  </url>
-  <url>
-    <loc>https://sofia-soft.com/en/</loc>
-    <lastmod>2026-07-29</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-    <xhtml:link rel="alternate" hreflang="bg" href="https://sofia-soft.com/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://sofia-soft.com/en/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://sofia-soft.com/"/>
-  </url>
-  <url>
-    <loc>https://sofia-soft.com/uslugi/izrabotka-na-sait/</loc>
-    <lastmod>2026-08-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="bg" href="https://sofia-soft.com/uslugi/izrabotka-na-sait/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://sofia-soft.com/en/services/website-development/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://sofia-soft.com/"/>
-  </url>
-  <url>
-    <loc>https://sofia-soft.com/uslugi/saas-razrabotka/</loc>
-    <lastmod>2026-08-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="bg" href="https://sofia-soft.com/uslugi/saas-razrabotka/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://sofia-soft.com/en/services/saas-development/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://sofia-soft.com/"/>
-  </url>
-  <url>
-    <loc>https://sofia-soft.com/uslugi/custom-software/</loc>
-    <lastmod>2026-08-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="bg" href="https://sofia-soft.com/uslugi/custom-software/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://sofia-soft.com/en/services/custom-software/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://sofia-soft.com/"/>
-  </url>
-  <url><loc>https://sofia-soft.com/en/services/website-development/</loc><lastmod>2026-08-24</lastmod><changefreq>monthly</changefreq><priority>0.8</priority><xhtml:link rel="alternate" hreflang="bg" href="https://sofia-soft.com/uslugi/izrabotka-na-sait/"/><xhtml:link rel="alternate" hreflang="en" href="https://sofia-soft.com/en/services/website-development/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://sofia-soft.com/"/></url>
-  <url><loc>https://sofia-soft.com/en/services/saas-development/</loc><lastmod>2026-08-24</lastmod><changefreq>monthly</changefreq><priority>0.8</priority><xhtml:link rel="alternate" hreflang="bg" href="https://sofia-soft.com/uslugi/saas-razrabotka/"/><xhtml:link rel="alternate" hreflang="en" href="https://sofia-soft.com/en/services/saas-development/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://sofia-soft.com/"/></url>
-  <url><loc>https://sofia-soft.com/en/services/custom-software/</loc><lastmod>2026-08-24</lastmod><changefreq>monthly</changefreq><priority>0.8</priority><xhtml:link rel="alternate" hreflang="bg" href="https://sofia-soft.com/uslugi/custom-software/"/><xhtml:link rel="alternate" hreflang="en" href="https://sofia-soft.com/en/services/custom-software/"/><xhtml:link rel="alternate" hreflang="x-default" href="https://sofia-soft.com/"/></url>
+    <url>
+        <loc>https://sofia-soft.com/</loc>
+        <lastmod>2026-07-29</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>1.0</priority>
+        <xhtml:link rel="alternate" hreflang="bg" href="https://sofia-soft.com/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://sofia-soft.com/en/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://sofia-soft.com/"/>
+    </url>
+    <url>
+        <loc>https://sofia-soft.com/en/</loc>
+        <lastmod>2026-07-29</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+        <xhtml:link rel="alternate" hreflang="bg" href="https://sofia-soft.com/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://sofia-soft.com/en/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://sofia-soft.com/"/>
+    </url>
+    <url>
+        <loc>https://sofia-soft.com/uslugi/izrabotka-na-sait/</loc>
+        <lastmod>2026-08-14</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="bg" href="https://sofia-soft.com/uslugi/izrabotka-na-sait/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://sofia-soft.com/en/services/website-development/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://sofia-soft.com/"/>
+    </url>
+    <url>
+        <loc>https://sofia-soft.com/uslugi/saas-razrabotka/</loc>
+        <lastmod>2026-08-14</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="bg" href="https://sofia-soft.com/uslugi/saas-razrabotka/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://sofia-soft.com/en/services/saas-development/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://sofia-soft.com/"/>
+    </url>
+    <url>
+        <loc>https://sofia-soft.com/uslugi/custom-software/</loc>
+        <lastmod>2026-08-14</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="bg" href="https://sofia-soft.com/uslugi/custom-software/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://sofia-soft.com/en/services/custom-software/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://sofia-soft.com/"/>
+    </url>
+    <url>
+        <loc>https://sofia-soft.com/en/services/website-development/</loc>
+        <lastmod>2026-08-24</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="bg" href="https://sofia-soft.com/uslugi/izrabotka-na-sait/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://sofia-soft.com/en/services/website-development/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://sofia-soft.com/"/>
+    </url>
+    <url>
+        <loc>https://sofia-soft.com/en/services/saas-development/</loc>
+        <lastmod>2026-08-24</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="bg" href="https://sofia-soft.com/uslugi/saas-razrabotka/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://sofia-soft.com/en/services/saas-development/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://sofia-soft.com/"/>
+    </url>
+    <url>
+        <loc>https://sofia-soft.com/en/services/custom-software/</loc>
+        <lastmod>2026-08-24</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="bg" href="https://sofia-soft.com/uslugi/custom-software/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://sofia-soft.com/en/services/custom-software/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://sofia-soft.com/"/>
+    </url>
 </urlset>
