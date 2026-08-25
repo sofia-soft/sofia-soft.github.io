@@ -304,13 +304,6 @@
         font-size: 3.05rem;
     }
 
-    .hero_sub_title {
-        max-width: 600px;
-    }
-
-    .hero_sub_title {
-        max-width: unset;
-    }
     .hero_img {
         display: block;
         width: 700px;
@@ -370,10 +363,6 @@
         flex-direction: row;
         justify-content: space-between;
         gap: 20px;
-    }
-
-    .about_us_list {
-        flex: 1;
     }
 
     .about_us_list:first-child {
@@ -581,10 +570,6 @@
 }
 
 @media (min-width: 1800px) {
-
-    .hero_sub_title {
-        max-width: unset;
-    }
 
     .about_us_rigth_side {
         align-items: start;

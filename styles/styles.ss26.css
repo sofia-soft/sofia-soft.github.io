@@ -220,6 +220,8 @@ section canvas {
 }
 
 .scroll-hint {
+    --scroll-hint-label: whitesmoke;
+    --scroll-hint-line: whitesmoke;
     position: absolute;
     bottom: 5px;
     left: 50%;
@@ -232,7 +234,7 @@ section canvas {
 }
 
 .scroll-hint span {
-    font-family: var(--athens-gray);
+    color: var(--scroll-hint-label);
     font-size: 9px;
     letter-spacing: .15em;
 }
@@ -240,7 +242,13 @@ section canvas {
 .scroll-line {
     width: 1px;
     height: 32px;
+    background: linear-gradient(to bottom, var(--scroll-hint-line), transparent);
     animation: scrollPulse 2s ease-in-out infinite;
+}
+
+.scroll-hint--dark {
+    --scroll-hint-label: rgba(24, 95, 165, .35);
+    --scroll-hint-line: #185fa5;
 }
 
 @keyframes scrollPulse {
@@ -396,14 +404,11 @@ nav > .nav_list li a.active {
 
 .header.nav-open nav > .nav_list li:last-child {
     border-bottom: none;
+    display: block;
 }
 
 nav > .nav_list li:last-child {
     display: none;
-}
-
-.header.nav-open nav > .nav_list li:last-child {
-    display: block;
 }
 
 .header.nav-open nav > .nav_list li:last-child a {
@@ -1498,6 +1503,11 @@ nav > .nav_list li:last-child {
 
 .design:hover .pencil {
     animation: pencilMove 2.5s 0.2s ease-in-out infinite;
+}
+
+.pencil {
+    transform: rotate(-30deg);
+    transform-origin: 38px 32px;
 }
 
 .design:hover .cursor-blink {
