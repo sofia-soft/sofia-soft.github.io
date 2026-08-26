@@ -1,0 +1,30 @@
+<svg width="399" height="399" viewBox="0 0 399 399" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <title>Sofia Soft</title>
+    <g transform="translate(0 28)">
+        <path d="M54 152.212L118.245 152.583L190.769 92.6625L276.415 152.956L342.398 152.583L189.46 48L54 152.212Z" fill="url(#paint0)" stroke="url(#paint1)"/>
+        <path d="M342.51 190.488L278.284 190.117L205.752 250.038L120.106 189.744L54.1233 190.117L207.061 294.7L342.51 190.488Z" fill="url(#paint2)" stroke="url(#paint3)"/>
+        <path d="M127.439 94.1101L56.2275 93.8393L268.638 242.007L337.531 241.029L127.439 94.1101Z" fill="white" stroke="url(#paint4)"/>
+    </g>
+    <defs>
+        <linearGradient id="paint0" x1="198.199" y1="48" x2="198.199" y2="152.956" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#396399"/>
+            <stop offset="1" stop-color="#B6D5FF"/>
+        </linearGradient>
+        <linearGradient id="paint1" x1="198.199" y1="48" x2="198.199" y2="152.956" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#B6D5FF"/>
+            <stop offset="1" stop-color="#396399"/>
+        </linearGradient>
+        <linearGradient id="paint2" x1="198.316" y1="189.744" x2="198.316" y2="294.7" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#B6D5FF"/>
+            <stop offset="1" stop-color="#396399"/>
+        </linearGradient>
+        <linearGradient id="paint3" x1="198.316" y1="189.744" x2="198.316" y2="294.7" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#396399"/>
+            <stop offset="1" stop-color="#B6D5FF"/>
+        </linearGradient>
+        <linearGradient id="paint4" x1="196.879" y1="93.8393" x2="196.879" y2="242.007" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#B6D5FF"/>
+            <stop offset="1" stop-color="white"/>
+        </linearGradient>
+    </defs>
+</svg>
