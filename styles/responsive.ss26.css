@@ -569,6 +569,16 @@
     }
 }
 
+@media (min-width: 1024px) and (max-width: 1439px) {
+    footer {
+        flex-direction: column;
+    }
+
+    .footer_bottom {
+        width: 100%;
+    }
+}
+
 @media (min-width: 1800px) {
 
     .about_us_rigth_side {

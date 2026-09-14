@@ -67,6 +67,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const projectModal = document.getElementById('project-modal');
     const projectsTitle = document.getElementById('projects-title');
+    let projectTrigger = null;
 
     function modalField(name) {
         return projectModal?.querySelector(`[data-project-modal="${name}"]`);
@@ -102,11 +103,14 @@ document.addEventListener('DOMContentLoaded', () => {
         projectModal.classList.remove('active');
         projectModal.setAttribute('aria-hidden', 'true');
         document.body.classList.remove('project-modal-open');
-        projectsTitle?.focus({preventScroll: true});
+        const focusTarget = projectTrigger?.isConnected ? projectTrigger : projectsTitle;
+        focusTarget?.focus({preventScroll: true});
+        projectTrigger = null;
     }
 
     function openProjectModal(card) {
         if (!projectModal) return;
+        projectTrigger = card;
         populateModal(card);
         projectModal.classList.add('active');
         projectModal.setAttribute('aria-hidden', 'false');

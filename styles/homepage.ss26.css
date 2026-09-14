@@ -198,6 +198,7 @@
     opacity: 1;
     visibility: visible;
     pointer-events: auto;
+    transition: opacity .25s ease;
 }
 
 .project-modal-backdrop {
@@ -330,4 +331,3 @@
 body.project-modal-open {
     overflow: hidden;
 }
-

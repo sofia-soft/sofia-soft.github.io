@@ -8,9 +8,27 @@ document.addEventListener('DOMContentLoaded', () => {
     const burger = document.querySelector('.burger');
     const navList = document.querySelector('.nav_list');
     const CONSENT_KEY = 'cookiesConsent';
-    let analyticsLoaded = false;
+    const MEASUREMENT_ID = 'G-JJWTBVCPJV';
+    let analyticsRequested = false;
+    let analyticsReady = false;
+    let analyticsConfigured = false;
+    let pendingLeads = 0;
 
-    localStorage.setItem('lang', lang);
+    try {
+        localStorage.setItem('lang', lang);
+    } catch {
+        // Navigation and the contact form also work when storage is unavailable.
+    }
+
+    function hasAnalyticsConsent() {
+        try {
+            return localStorage.getItem(CONSENT_KEY) === 'accepted';
+        } catch {
+            return false;
+        }
+    }
+
+    window[`ga-disable-${MEASUREMENT_ID}`] = !hasAnalyticsConsent();
 
     function openMenu() {
         if (!header || !burger) return;
@@ -119,8 +137,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const contactForm = document.getElementById('contactForm');
     if (contactForm) {
+        let submitting = false;
         contactForm.addEventListener('submit', async function (event) {
             event.preventDefault();
+            if (submitting) return;
+            submitting = true;
             const button = this.querySelector('.form_submit');
             const buttonText = this.querySelector('.form_submit_text');
             const success = document.getElementById('formSuccess');
@@ -148,6 +169,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         success.style.display = 'none';
                     }, 5000);
                 }
+                trackLead();
                 if (buttonText) buttonText.textContent = initialText;
             } catch {
                 if (buttonText) buttonText.textContent = lang === 'bg' ? 'Грешка — опитайте отново' : 'Error — please try again';
@@ -155,6 +177,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     if (buttonText) buttonText.textContent = initialText;
                 }, 3000);
             } finally {
+                submitting = false;
                 if (button) button.disabled = false;
             }
         });
@@ -162,42 +185,108 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const cookiePopup = document.getElementById('cookie-consent-popup');
     const cookieModal = document.getElementById('cookie-modal');
-    const cookieState = localStorage.getItem(CONSENT_KEY);
+    let cookieState = null;
+    try {
+        cookieState = localStorage.getItem(CONSENT_KEY);
+    } catch {
+        // Default to no analytics consent if storage is unavailable.
+    }
     if (!cookieState && cookiePopup) cookiePopup.style.display = 'block';
 
-    function enableAnalytics() {
-        if (analyticsLoaded) return;
-        analyticsLoaded = true;
-        window.dataLayer = window.dataLayer || [];
-        window.gtag = window.gtag || function () {
-            window.dataLayer.push(arguments);
-        };
-        window.gtag('consent', 'default', {analytics_storage: 'denied'});
-        const script = document.createElement('script');
-        script.async = true;
-        script.src = 'https://www.googletagmanager.com/gtag/js?id=G-JJWTBVCPJV';
-        script.onload = () => {
-            window.gtag('js', new Date());
+    function flushLeads() {
+        if (!hasAnalyticsConsent()) {
+            pendingLeads = 0;
+            return;
+        }
+        if (!analyticsConfigured || typeof window.gtag !== 'function') return;
+        const count = pendingLeads;
+        pendingLeads = 0;
+        for (let index = 0; index < count; index += 1) {
+            if (!hasAnalyticsConsent()) return;
+            window.gtag('event', 'generate_lead', {form_id: 'contactForm', language: lang === 'bg' ? 'bg' : 'en'});
+        }
+    }
+
+    function trackLead() {
+        try {
+            if (!hasAnalyticsConsent()) return;
+            // Hold successful submissions locally until GA4 is ready, never across a refusal.
+            pendingLeads += 1;
+            flushLeads();
+        } catch {
+            pendingLeads = 0;
+            // Analytics must never change the outcome of a successful enquiry.
+        }
+    }
+
+    function activateAnalytics() {
+        if (!analyticsReady || !hasAnalyticsConsent()) return;
+        try {
+            window[`ga-disable-${MEASUREMENT_ID}`] = false;
             window.gtag('consent', 'update', {analytics_storage: 'granted'});
-            window.gtag('config', 'G-JJWTBVCPJV');
-            window.gtag('event', 'page_view');
-        };
-        document.head.appendChild(script);
+            if (!analyticsConfigured) {
+                window.gtag('js', new Date());
+                window.gtag('config', MEASUREMENT_ID);
+                analyticsConfigured = true;
+            }
+            flushLeads();
+        } catch {
+            pendingLeads = 0;
+            // A blocked or unavailable analytics tag must not affect the page.
+        }
+    }
+
+    function enableAnalytics() {
+        if (!hasAnalyticsConsent()) return;
+        if (analyticsRequested) {
+            activateAnalytics();
+            return;
+        }
+        analyticsRequested = true;
+        try {
+            window.dataLayer = window.dataLayer || [];
+            window.gtag = window.gtag || function () {
+                window.dataLayer.push(arguments);
+            };
+            window.gtag('consent', 'default', {analytics_storage: 'denied'});
+            const script = document.createElement('script');
+            script.async = true;
+            script.src = `https://www.googletagmanager.com/gtag/js?id=${MEASUREMENT_ID}`;
+            script.onload = () => {
+                analyticsReady = true;
+                activateAnalytics();
+            };
+            script.onerror = () => { pendingLeads = 0; };
+            document.head.appendChild(script);
+        } catch {
+            pendingLeads = 0;
+        }
     }
 
     function disableAnalytics() {
-        analyticsLoaded = false;
-        if (typeof window.gtag === 'function') window.gtag('consent', 'update', {analytics_storage: 'denied'});
+        pendingLeads = 0;
+        window[`ga-disable-${MEASUREMENT_ID}`] = true;
+        try {
+            if (typeof window.gtag === 'function') window.gtag('consent', 'update', {analytics_storage: 'denied'});
+        } catch {
+            // The disable flag still applies if the tag itself fails.
+        }
         document.cookie.split(';').forEach(cookie => {
             const name = cookie.split('=')[0].trim();
             if (!name.startsWith('_ga')) return;
             document.cookie = `${name}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;`;
-            document.cookie = `${name}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=${location.hostname};`;
+            const labels = location.hostname.split('.');
+            for (let index = 0; index < labels.length - 1; index += 1) {
+                const domain = labels.slice(index).join('.');
+                document.cookie = `${name}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=${domain};`;
+            }
         });
     }
 
     function openCookieSection(sectionId) {
         if (!cookieModal) return;
+        const toggle = document.getElementById('analyticsToggle');
+        if (toggle) toggle.checked = hasAnalyticsConsent();
         cookieModal.querySelectorAll('.cookie-section').forEach(section => section.classList.replace('active', 'hidden'));
         const section = document.getElementById(sectionId);
         if (section) section.classList.replace('hidden', 'active');
@@ -216,6 +305,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('decline-cookies')?.addEventListener('click', () => {
         localStorage.setItem(CONSENT_KEY, 'rejected');
         if (cookiePopup) cookiePopup.style.display = 'none';
+        disableAnalytics();
     });
     document.getElementById('show-cookie-info')?.addEventListener('click', () => openCookieSection('cookieIntro'));
     document.getElementById('cookies_button')?.addEventListener('click', () => openCookieSection('cookieSettings'));
@@ -235,6 +325,11 @@ document.addEventListener('DOMContentLoaded', () => {
         if (toggle) toggle.checked = false;
         disableAnalytics();
         closeCookieModal();
+    });
+
+    window.addEventListener('storage', event => {
+        if (event.key !== CONSENT_KEY && event.key !== null) return;
+        hasAnalyticsConsent() ? enableAnalytics() : disableAnalytics();
     });
 
     if (cookieState === 'accepted') enableAnalytics();
