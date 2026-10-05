@@ -1,0 +1,17 @@
+# Sofia Soft
+
+> Sofia Soft is a software development agency based in Sofia, Bulgaria. The company builds websites, SaaS platforms, and custom software for businesses in Bulgaria and abroad.
+
+## Български
+
+- [Начало](https://sofia-soft.com/): Представяне на Sofia Soft, подхода към работата и основните услуги.
+- [Изработка на сайт](https://sofia-soft.com/uslugi/izrabotka-na-sait/): Уеб дизайн и разработка на бизнес сайтове с мобилни изгледи, контактни форми и технически SEO основи.
+- [SaaS разработка](https://sofia-soft.com/uslugi/saas-razrabotka/): Проектиране и разработка на SaaS платформи и облачни уеб приложения.
+- [Разработка на софтуер по поръчка](https://sofia-soft.com/uslugi/custom-software/): Бизнес софтуер, CRM системи, интеграции и автоматизация според договорения обхват.
+
+## English
+
+- [Home](https://sofia-soft.com/en/): Sofia Soft overview, working approach, and core services.
+- [Website development](https://sofia-soft.com/en/services/website-development/): Website design and development for businesses, including mobile layouts, contact forms, and technical SEO foundations.
+- [SaaS development](https://sofia-soft.com/en/services/saas-development/): Design and development of SaaS platforms and cloud web applications.
+- [Custom software development](https://sofia-soft.com/en/services/custom-software/): Business software, CRM systems, integrations, and automation within an agreed scope.
