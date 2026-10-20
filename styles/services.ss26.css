@@ -76,6 +76,52 @@
     text-decoration: underline;
 }
 
+.svc-related {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px 24px;
+    margin-top: 26px;
+    padding: 18px 22px;
+    border: 1px solid rgba(97, 164, 255, .28);
+    border-radius: 14px;
+    background: rgba(255, 255, 255, .88);
+}
+
+.svc-related-title {
+    margin: 0;
+    color: var(--big-stone);
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.svc-related-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.svc-related-links a {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    padding: 9px 13px;
+    border: 1px solid rgba(97, 164, 255, .3);
+    border-radius: 8px;
+    background: rgba(97, 164, 255, .08);
+    color: var(--chambray);
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background .2s, border-color .2s;
+}
+
+.svc-related-links a:hover {
+    border-color: var(--malibu);
+    background: rgba(97, 164, 255, .16);
+}
+
 .svc-grid {
     display: grid;
     grid-template-columns: 1fr;
