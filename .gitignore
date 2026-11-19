@@ -9,3 +9,5 @@ SEO
 /CHANGELOG.md
 /SEO_FOLLOWUP.md
 /tests/
+/.google-api/
+/tools/.env
